@@ -160,7 +160,7 @@
       }
     };
 
-    // Full Spreadsheet Catalog Data with Verified Product Shots
+    // Full Catalog Data including Convenience Items
 const products = [
   // --- WINE & SANGRIA ---
   { 
@@ -207,28 +207,6 @@ const products = [
     image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=800&auto=format&fit=crop", 
     tag: { es: "Vino Tinto", en: "Red Wine" } 
   },
-  { 
-    id: 5, 
-    title: { es: "Vino Frontera Sauvignon Blanc", en: "Frontera Sauvignon Blanc" }, 
-    size: "750 ml", 
-    abv: "", 
-    category: "wine", 
-    priceCRC: 6996, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Vino Blanco", en: "White Wine" } 
-  },
-  { 
-    id: 6, 
-    title: { es: "Peñasol Sangría Blanca Original", en: "Peñasol White Sangria" }, 
-    size: "1 L", 
-    abv: "7%", 
-    category: "wine", 
-    priceCRC: 4422, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Sangría", en: "Sangria" } 
-  },
 
   // --- TEQUILA & MEZCAL ---
   { 
@@ -243,39 +221,6 @@ const products = [
     tag: { es: "Tequila", en: "Tequila" } 
   },
   { 
-    id: 8, 
-    title: { es: "Horchata Mezcal 400", en: "Horchata Mezcal 400" }, 
-    size: "750 ml", 
-    abv: "", 
-    category: "tequila", 
-    priceCRC: 31020, 
-    featured: true, 
-    image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Mezcal", en: "Mezcal" } 
-  },
-  { 
-    id: 9, 
-    title: { es: "Conejos Espadín Tamarindo", en: "Conejos Espadín Tamarind" }, 
-    size: "750 ml", 
-    abv: "30%", 
-    category: "tequila", 
-    priceCRC: 15840, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Mezcal", en: "Mezcal" } 
-  },
-  { 
-    id: 10, 
-    title: { es: "Tequila 1800 Silver", en: "1800 Silver Tequila" }, 
-    size: "750 ml", 
-    abv: "", 
-    category: "tequila", 
-    priceCRC: 75900, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Tequila", en: "Tequila" } 
-  },
-  { 
     id: 11, 
     title: { es: "Don Julio Tequila Añejo", en: "Don Julio Añejo Tequila" }, 
     size: "750 ml", 
@@ -286,30 +231,8 @@ const products = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Tequila_Don_Julio.jpg/600px-Tequila_Don_Julio.jpg", 
     tag: { es: "Destacado", en: "Featured" } 
   },
-  { 
-    id: 12, 
-    title: { es: "Gran Malo Licor Con Tequila", en: "Gran Malo Tequila Liqueur" }, 
-    size: "750 ml", 
-    abv: "", 
-    category: "tequila", 
-    priceCRC: 19140, 
-    featured: false, 
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Botella_de_Tequila_%22Gran_Malo%22_de_Luisito_Comunica.png/454px-Botella_de_Tequila_%22Gran_Malo%22_de_Luisito_Comunica.png", 
-    tag: { es: "Tequila", en: "Tequila" } 
-  },
 
-  // --- BEER CANS ---
-  { 
-    id: 13, 
-    title: { es: "Imperial Cerveza Light", en: "Imperial Light Beer" }, 
-    size: "350 ml", 
-    abv: "", 
-    category: "beer", 
-    priceCRC: 1122, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1618886614638-80e3c103d31a?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Lata Fría", en: "Cold Can" } 
-  },
+  // --- BEER ---
   { 
     id: 14, 
     title: { es: "Imperial Cerveza Regular", en: "Imperial Regular Beer" }, 
@@ -330,44 +253,81 @@ const products = [
     priceCRC: 1400, 
     featured: false, 
     image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Lata Importada", en: "Imported Can" } 
+    tag: { es: "Importada", en: "Imported" } 
   },
-  { 
-    id: 16, 
-    title: { es: "Heineken Cerveza Original", en: "Heineken Original Beer" }, 
-    size: "330 ml", 
-    abv: "", 
-    category: "beer", 
-    priceCRC: 1848, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Lata Importada", en: "Imported Can" } 
-  },
-  { 
-    id: 17, 
-    title: { es: "Pilsen Cerveza Rubia Regular", en: "Pilsen Regular Beer" }, 
-    size: "350 ml", 
-    abv: "4.4%", 
-    category: "beer", 
-    priceCRC: 1122, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1584225065152-4a1454aa3d4e?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Lata Nacional", en: "Local Can" } 
-  },
-  { 
-    id: 18, 
-    title: { es: "Imperial Cerveza Ultra", en: "Imperial Ultra Beer" }, 
-    size: "350 ml", 
-    abv: "4%", 
-    category: "beer", 
-    priceCRC: 1122, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1618886614638-80e3c103d31a?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Low Cal", en: "Low Cal" } 
-  }
-];;
 
-    function formatPrice(priceCRC) {
+  // --- CHIPS & SNACKS ---
+  { 
+    id: 19, 
+    title: { es: "Pringles Original", en: "Pringles Original" }, 
+    size: "124 g", 
+    abv: "", 
+    category: "snacks", 
+    priceCRC: 2200, 
+    featured: true, 
+    image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=800&auto=format&fit=crop", 
+    tag: { es: "Snack", en: "Snack" } 
+  },
+  { 
+    id: 20, 
+    title: { es: "Doritos Nacho Cheese", en: "Doritos Nacho Cheese" }, 
+    size: "198 g", 
+    abv: "", 
+    category: "snacks", 
+    priceCRC: 1850, 
+    featured: false, 
+    image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=800&auto=format&fit=crop", 
+    tag: { es: "Chips", en: "Chips" } 
+  },
+
+  // --- BEBIDAS & ENERGÉTICAS ---
+  { 
+    id: 21, 
+    title: { es: "Red Bull Energy Drink", en: "Red Bull Energy Drink" }, 
+    size: "250 ml", 
+    abv: "", 
+    category: "drinks", 
+    priceCRC: 1600, 
+    featured: true, 
+    image: "https://images.unsplash.com/photo-1622543925917-763c34d1a86e?q=80&w=800&auto=format&fit=crop", 
+    tag: { es: "Energética", en: "Energy Drink" } 
+  },
+  { 
+    id: 22, 
+    title: { es: "Coca-Cola Sabor Original", en: "Coca-Cola Original" }, 
+    size: "600 ml", 
+    abv: "", 
+    category: "drinks", 
+    priceCRC: 1100, 
+    featured: false, 
+    image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop", 
+    tag: { es: "Refresco", en: "Soda" } 
+  },
+
+  // --- CIGARRILLOS & DULCES ---
+  { 
+    id: 23, 
+    title: { es: "Marlboro Red Cajetilla", en: "Marlboro Red Pack" }, 
+    size: "20 cigarrillos", 
+    abv: "", 
+    category: "extras", 
+    priceCRC: 2700, 
+    featured: false, 
+    image: "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?q=80&w=800&auto=format&fit=crop", 
+    tag: { es: "Tabaco", en: "Tobacco" } 
+  },
+  { 
+    id: 24, 
+    title: { es: "Chicles Trident Menta", en: "Trident Spearmint Gum" }, 
+    size: "Pack 14 pcs", 
+    abv: "", 
+    category: "extras", 
+    priceCRC: 850, 
+    featured: false, 
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?q=80&w=800&auto=format&fit=crop", 
+    tag: { es: "Chicles", en: "Gum" } 
+  }
+];
       return currentCurrency === 'CRC' 
         ? `₡${priceCRC.toLocaleString()}` 
         : `$${(priceCRC / exchangeRate).toFixed(2)}`;
