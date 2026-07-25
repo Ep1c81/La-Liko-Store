@@ -105,13 +105,13 @@
   </section>
 
   <!-- Full Dynamic Catalog Section -->
-  <section id="catalog" class="py-16 bg-zinc-900/40 relative border-t border-zinc-800/50">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-        <div>
-          <h2 id="catalog-title" class="text-3xl font-bold text-white mb-2">Catálogo Completo</h2>
-          <p id="catalog-subtitle" class="text-zinc-400">Selecciona una categoría para ver productos y precios.</p>
-        </div>
+  <!-- Category Filters matching Spreadsheet -->
+<div id="filter-buttons" class="flex flex-wrap gap-2">
+  <button data-category="all" class="filter-btn active-filter px-4 py-2 rounded-lg text-xs font-bold transition-all">Todos / All</button>
+  <button data-category="wine" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all">Vinos / Wine</button>
+  <button data-category="tequila" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all">Tequila & Mezcal</button>
+  <button data-category="beer" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all">Beer & Cider</button>
+</div>
 
         <!-- Category Filters -->
         <div id="filter-buttons" class="flex flex-wrap gap-2">
