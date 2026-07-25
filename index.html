@@ -3,36 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Liko Store | Licorera & Express Santa Ana</title>
+  <title>La Liko Store | Santa Ana Express</title>
   
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS & Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="assets/css/styles.css" />
   
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            gold: {
-              300: '#ffe58f',
-              400: '#ffd666',
-              500: '#faad14',
-              600: '#d48806',
-              700: '#ad6800',
-            }
-          }
-        }
-      }
+  <style>
+    .filter-btn {
+      background-color: #18181b;
+      color: #a1a1aa;
+      border: 1px solid #27272a;
     }
-  </script>
+    .filter-btn:hover {
+      color: #ffffff;
+      border-color: rgba(245, 158, 11, 0.5);
+    }
+    .filter-btn.active-filter {
+      background-color: #f59e0b;
+      color: #09090b;
+      border-color: #f59e0b;
+      font-weight: 700;
+    }
+    .product-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -5px rgba(245, 158, 11, 0.15);
+    }
+  </style>
 </head>
 <body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-amber-500 selection:text-black">
 
-  <!-- Navigation Header with Language & Currency Toggles -->
+  <!-- Header -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/60">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
       <a href="#" class="text-xl md:text-2xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600">
@@ -44,7 +48,6 @@
         <a href="#catalog" id="nav-catalog" class="hover:text-amber-400 transition-colors">Catálogo</a>
       </nav>
 
-      <!-- Language & Currency Controls -->
       <div class="flex items-center gap-2 md:gap-3">
         <!-- Currency Toggle -->
         <button id="toggle-currency" type="button" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-zinc-900 border border-amber-500/30 text-amber-400 hover:bg-zinc-800 transition-all flex items-center gap-1 cursor-pointer">
@@ -65,78 +68,233 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="relative pt-32 pb-16 md:pt-44 md:pb-24 overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-900/20 via-zinc-950 to-zinc-950 pointer-events-none"></div>
-    
+  <section class="relative pt-32 pb-12 md:pt-40 md:pb-16 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
       <span id="hero-badge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-6">
         <i data-lucide="sparkles" class="w-4 h-4"></i> Express Santa Ana & San José
       </span>
       
-      <h1 id="hero-title" class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-        Licores Premium, Snacks & <br />
+      <h1 id="hero-title" class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 leading-tight">
+        Licores Premium, Cerveza & <br />
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500">
           Entrega Rápida a Tu Puerta.
         </span>
       </h1>
       
       <p id="hero-subtitle" class="max-w-2xl mx-auto text-zinc-400 text-base md:text-lg mb-8">
-        Vinos, cervezas frías, licores finos, bocadillos y mezcladores directos a tu casa o evento.
+        Tu licorera express en Santa Ana. Servicio rápido a domicilio de vinos, cervezas frías y destilados.
       </p>
-
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#catalog" id="hero-btn-explore" class="px-8 py-3.5 rounded-xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-zinc-950 hover:scale-105 transition-transform shadow-xl shadow-amber-500/20">
-          Explorar Menú
-        </a>
-      </div>
     </div>
   </section>
 
-  <!-- Featured Grid Visuals -->
-  <section id="featured" class="py-12 bg-zinc-950/80 border-t border-zinc-800/40">
+  <!-- Featured Grid -->
+  <section id="featured" class="py-8 bg-zinc-950 border-t border-zinc-800/40">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 id="section-featured-title" class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+      <h2 id="featured-title" class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
         <i data-lucide="flame" class="text-amber-500 w-5 h-5"></i> Lo Más Pedido en Santa Ana
       </h2>
-      <div id="featured-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Dynamic Featured Items Loaded Here -->
-      </div>
+      <div id="featured-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
     </div>
   </section>
 
-  <!-- Full Dynamic Catalog Section -->
-  <!-- Category Filters matching Spreadsheet -->
-<div id="filter-buttons" class="flex flex-wrap gap-2">
-  <button data-category="all" class="filter-btn active-filter px-4 py-2 rounded-lg text-xs font-bold transition-all">Todos / All</button>
-  <button data-category="wine" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all">Vinos / Wine</button>
-  <button data-category="tequila" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all">Tequila & Mezcal</button>
-  <button data-category="beer" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all">Beer & Cider</button>
-</div>
+  <!-- Full Catalog Section -->
+  <section id="catalog" class="py-16 bg-zinc-900/40 border-t border-zinc-800/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <h2 id="catalog-title" class="text-3xl font-bold text-white mb-2">Catálogo Completo</h2>
+          <p id="catalog-subtitle" class="text-zinc-400">Precios oficiales de La Liko Store con envío express.</p>
+        </div>
 
-        <!-- Category Filters -->
+        <!-- Filter Buttons -->
         <div id="filter-buttons" class="flex flex-wrap gap-2">
           <button data-category="all" class="filter-btn active-filter px-4 py-2 rounded-lg text-xs font-bold transition-all">Todos / All</button>
-          <button data-category="liquor" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all">Licores</button>
-          <button data-category="beer" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all">Cervezas</button>
-          <button data-category="mixers" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all">Mezcladores</button>
-          <button data-category="snacks" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all">Snacks</button>
+          <button data-category="wine" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all">Vinos / Wine</button>
+          <button data-category="tequila" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all">Tequila & Mezcal</button>
+          <button data-category="beer" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all">Cervezas / Beer</button>
         </div>
       </div>
 
       <!-- Product Grid -->
-      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Javascript dynamic cards -->
-      </div>
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-10 border-t border-zinc-800 bg-zinc-950">
-    <div class="max-w-7xl mx-auto px-6 text-center text-zinc-500 text-sm">
-      <p>&copy; 2026 La Liko Store (Santa Ana, San José). Todos los derechos reservados.</p>
-    </div>
+  <footer class="py-10 border-t border-zinc-800 bg-zinc-950 text-center text-zinc-500 text-sm">
+    <p>&copy; 2026 La Liko Store (Santa Ana). Todos los derechos reservados.</p>
   </footer>
 
-  <script src="assets/js/app.js"></script>
+  <!-- Script logic bundled inline for guaranteed execution -->
+  <script>
+    let currentLang = 'es';
+    let currentCurrency = 'CRC';
+    const exchangeRate = 500;
+
+    const i18n = {
+      es: {
+        navFeatured: "Destacados",
+        navCatalog: "Catálogo",
+        navCta: "Ordenar",
+        featuredTitle: "Lo Más Pedido en Santa Ana",
+        catalogTitle: "Catálogo Completo",
+        catalogSubtitle: "Precios oficiales de La Liko Store con envío express.",
+        orderBtn: "Pedir por WhatsApp",
+        waMsg: "Hola La Liko Store! Me gustaría ordenar:"
+      },
+      en: {
+        navFeatured: "Featured",
+        navCatalog: "Catalog",
+        navCta: "Order Now",
+        featuredTitle: "Top Ordered in Santa Ana",
+        catalogTitle: "Full Catalog",
+        catalogSubtitle: "Official La Liko Store prices with express delivery.",
+        orderBtn: "Order via WhatsApp",
+        waMsg: "Hello La Liko Store! I would like to order:"
+      }
+    };
+
+    const products = [
+      { id: 1, title: { es: "Marqués de Cáceres Tinto Crianza Rioja", en: "Marqués de Cáceres Red Crianza Rioja" }, size: "750 ml", abv: "14%", category: "wine", priceCRC: 15840, featured: true, image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800&auto=format&fit=crop", tag: { es: "Vino Tinto", en: "Red Wine" } },
+      { id: 2, title: { es: "Vino Rucio Sangría", en: "Vino Rucio Sangría" }, size: "1 L", abv: "7%", category: "wine", priceCRC: 4356, featured: false, image: "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?q=80&w=800&auto=format&fit=crop", tag: { es: "Sangría", en: "Sangria" } },
+      { id: 3, title: { es: "Vino Casillero del Diablo Malbec", en: "Casillero del Diablo Malbec" }, size: "750 ml", abv: "", category: "wine", priceCRC: 9240, featured: false, image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800&auto=format&fit=crop", tag: { es: "Vino Tinto", en: "Red Wine" } },
+      { id: 4, title: { es: "Vino Frontera Merlot", en: "Frontera Merlot Wine" }, size: "750 ml", abv: "", category: "wine", priceCRC: 6996, featured: false, image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800&auto=format&fit=crop", tag: { es: "Vino Tinto", en: "Red Wine" } },
+      { id: 5, title: { es: "Vino Frontera Sauvignon Blanc", en: "Frontera Sauvignon Blanc" }, size: "750 ml", abv: "", category: "wine", priceCRC: 6996, featured: false, image: "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?q=80&w=800&auto=format&fit=crop", tag: { es: "Vino Blanco", en: "White Wine" } },
+      { id: 6, title: { es: "Peñasol Sangría Blanca Original", en: "Peñasol White Sangria" }, size: "1 L", abv: "7%", category: "wine", priceCRC: 4422, featured: false, image: "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?q=80&w=800&auto=format&fit=crop", tag: { es: "Sangría", en: "Sangria" } },
+      { id: 7, title: { es: "Tequila Gran Malo Joven", en: "Gran Malo Joven Tequila" }, size: "750 ml", abv: "40%", category: "tequila", priceCRC: 26400, featured: true, image: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?q=80&w=800&auto=format&fit=crop", tag: { es: "Tequila", en: "Tequila" } },
+      { id: 8, title: { es: "Horchata Mezcal 400", en: "Horchata Mezcal 400" }, size: "750 ml", abv: "", category: "tequila", priceCRC: 31020, featured: true, image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop", tag: { es: "Mezcal", en: "Mezcal" } },
+      { id: 9, title: { es: "Conejos Espadín Tamarindo", en: "Conejos Espadín Tamarind" }, size: "750 ml", abv: "30%", category: "tequila", priceCRC: 15840, featured: false, image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop", tag: { es: "Mezcal", en: "Mezcal" } },
+      { id: 10, title: { es: "Tequila 1800 Silver", en: "1800 Silver Tequila" }, size: "750 ml", abv: "", category: "tequila", priceCRC: 75900, featured: false, image: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?q=80&w=800&auto=format&fit=crop", tag: { es: "Tequila", en: "Tequila" } },
+      { id: 11, title: { es: "Don Julio Tequila Añejo", en: "Don Julio Añejo Tequila" }, size: "750 ml", abv: "", category: "tequila", priceCRC: 22440, featured: true, image: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?q=80&w=800&auto=format&fit=crop", tag: { es: "Destacado", en: "Featured" } },
+      { id: 12, title: { es: "Gran Malo Licor Con Tequila", en: "Gran Malo Tequila Liqueur" }, size: "750 ml", abv: "", category: "tequila", priceCRC: 19140, featured: false, image: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?q=80&w=800&auto=format&fit=crop", tag: { es: "Tequila", en: "Tequila" } },
+      { id: 13, title: { es: "Imperial Cerveza Light", en: "Imperial Light Beer" }, size: "350 ml", abv: "", category: "beer", priceCRC: 1122, featured: false, image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop", tag: { es: "Fría", en: "Cold" } },
+      { id: 14, title: { es: "Imperial Cerveza Regular", en: "Imperial Regular Beer" }, size: "350 ml", abv: "4.5%", category: "beer", priceCRC: 1122, featured: true, image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop", tag: { es: "Popular", en: "Popular" } },
+      { id: 15, title: { es: "Heineken Cerveza Lager", en: "Heineken Lager Beer" }, size: "355 ml", abv: "5%", category: "beer", priceCRC: 1400, featured: false, image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop", tag: { es: "Importada", en: "Imported" } },
+      { id: 16, title: { es: "Heineken Cerveza Original", en: "Heineken Original Beer" }, size: "330 ml", abv: "", category: "beer", priceCRC: 1848, featured: false, image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop", tag: { es: "Importada", en: "Imported" } },
+      { id: 17, title: { es: "Pilsen Cerveza Rubia Regular", en: "Pilsen Regular Beer" }, size: "350 ml", abv: "4.4%", category: "beer", priceCRC: 1122, featured: false, image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop", tag: { es: "Nacional", en: "Local" } },
+      { id: 18, title: { es: "Imperial Cerveza Ultra", en: "Imperial Ultra Beer" }, size: "350 ml", abv: "4%", category: "beer", priceCRC: 1122, featured: false, image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop", tag: { es: "Low Cal", en: "Low Cal" } }
+    ];
+
+    function formatPrice(priceCRC) {
+      return currentCurrency === 'CRC' 
+        ? `₡${priceCRC.toLocaleString()}` 
+        : `$${(priceCRC / exchangeRate).toFixed(2)}`;
+    }
+
+    function renderFeatured() {
+      const grid = document.getElementById("featured-grid");
+      if (!grid) return;
+      grid.innerHTML = "";
+
+      products.filter(p => p.featured).forEach(item => {
+        const titleText = item.title[currentLang];
+        const tagText = item.tag[currentLang];
+        const priceText = formatPrice(item.priceCRC);
+        const meta = item.abv ? `${item.size} • Alc. ${item.abv}` : item.size;
+
+        grid.innerHTML += `
+          <div class="bg-zinc-900 border border-amber-500/20 rounded-xl overflow-hidden p-4 flex flex-col justify-between">
+            <div class="relative h-44 mb-3 overflow-hidden rounded-lg bg-zinc-950">
+              <img src="${item.image}" alt="${titleText}" class="w-full h-full object-cover" />
+              <span class="absolute top-2 left-2 bg-amber-500 text-zinc-950 font-bold text-[10px] px-2 py-0.5 rounded-full uppercase">${tagText}</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-white mb-1 line-clamp-1">${titleText}</h4>
+              <p class="text-xs text-zinc-400 mb-2">${meta}</p>
+              <p class="text-amber-400 font-black text-lg mb-3">${priceText}</p>
+              <button onclick="orderProduct('${titleText}', '${priceText}')" class="w-full py-2 rounded-lg text-xs font-bold bg-amber-500 text-zinc-950 hover:bg-amber-400 transition-colors cursor-pointer">${i18n[currentLang].orderBtn}</button>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function renderProducts(filter) {
+      const grid = document.getElementById("product-grid");
+      if (!grid) return;
+      grid.innerHTML = "";
+
+      const items = filter === 'all' ? products : products.filter(p => p.category === filter);
+
+      items.forEach(product => {
+        const titleText = product.title[currentLang];
+        const tagText = product.tag[currentLang];
+        const priceText = formatPrice(product.priceCRC);
+        const meta = product.abv ? `${product.size} • Alc. ${product.abv}` : product.size;
+
+        grid.innerHTML += `
+          <div class="product-card bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden flex flex-col justify-between">
+            <div class="relative h-60 overflow-hidden bg-zinc-950">
+              <img src="${product.image}" alt="${titleText}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+              <span class="absolute top-4 left-4 bg-amber-500 text-zinc-950 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">${tagText}</span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow justify-between">
+              <div>
+                <h3 class="text-xl font-bold text-white mb-1">${titleText}</h3>
+                <p class="text-xs font-semibold text-zinc-400 mb-3">${meta}</p>
+                <p class="text-amber-400 font-extrabold text-2xl mb-4">${priceText}</p>
+              </div>
+              <button onclick="orderProduct('${titleText}', '${priceText}')" class="w-full py-3 rounded-xl font-semibold bg-zinc-800 hover:bg-amber-500 hover:text-zinc-950 text-white transition-all flex items-center justify-center gap-2 cursor-pointer">
+                <span>${i18n[currentLang].orderBtn}</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        `;
+      });
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function setupToggles() {
+      document.getElementById("toggle-lang").onclick = () => {
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        document.getElementById("lang-label").textContent = currentLang === 'es' ? '🇲🇽 ES' : '🇺🇸 EN';
+        updateTexts();
+        renderFeatured();
+        renderProducts('all');
+      };
+
+      document.getElementById("toggle-currency").onclick = () => {
+        currentCurrency = currentCurrency === 'CRC' ? 'USD' : 'CRC';
+        document.getElementById("curr-label").textContent = currentCurrency === 'CRC' ? '₡ CRC' : '$ USD';
+        renderFeatured();
+        renderProducts('all');
+      };
+    }
+
+    function updateTexts() {
+      const t = i18n[currentLang];
+      document.getElementById("nav-featured").textContent = t.navFeatured;
+      document.getElementById("nav-catalog").textContent = t.navCatalog;
+      document.getElementById("nav-cta").textContent = t.navCta;
+      document.getElementById("featured-title").innerHTML = `<i data-lucide="flame" class="text-amber-500 w-5 h-5"></i> ${t.featuredTitle}`;
+      document.getElementById("catalog-title").textContent = t.catalogTitle;
+      document.getElementById("catalog-subtitle").textContent = t.catalogSubtitle;
+    }
+
+    function setupFilters() {
+      document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.onclick = (e) => {
+          document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active-filter"));
+          e.target.classList.add("active-filter");
+          renderProducts(e.target.dataset.category);
+        };
+      });
+    }
+
+    function orderProduct(title, price) {
+      const message = encodeURIComponent(`${i18n[currentLang].waMsg}\n- ${title} (${price})`);
+      window.open(`https://wa.me/?text=${message}`, '_blank');
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setupToggles();
+      setupFilters();
+      renderFeatured();
+      renderProducts('all');
+      if (window.lucide) lucide.createIcons();
+    });
+  </script>
 </body>
 </html>
