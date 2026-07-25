@@ -1,6 +1,6 @@
-// La Liko Store - Dynamic Currency & Multilingual App State
-let currentLang = 'es'; // 'es' | 'en'
-let currentCurrency = 'CRC'; // 'CRC' | 'USD'
+// La Liko Store - Dynamic Inventory App
+let currentLang = 'es'; 
+let currentCurrency = 'CRC'; 
 const exchangeRate = 500; // ₡500 per $1 USD
 
 const i18n = {
@@ -13,10 +13,10 @@ const i18n = {
     heroSubtitle: "Vinos, cervezas frías, licores finos, bocadillos y mezcladores directos a tu casa o evento.",
     heroBtnExplore: "Explorar Menú",
     featuredTitle: "Lo Más Pedido en Santa Ana",
-    catalogTitle: "Catálogo Completo",
-    catalogSubtitle: "Selecciona una categoría para ver productos y precios.",
+    catalogTitle: "Nuestros Productos",
+    catalogSubtitle: "Precios oficiales de La Liko Store con opción express.",
     orderBtn: "Pedir por WhatsApp",
-    waMsg: "Hola La Liko Store! Me gustaría solicitar el siguiente pedido:"
+    waMsg: "Hola La Liko Store! Me gustaría ordenar:"
   },
   en: {
     navFeatured: "Featured",
@@ -27,102 +27,217 @@ const i18n = {
     heroSubtitle: "Fine wines, cold beers, premium liquors, mixers, and snacks delivered straight to you.",
     heroBtnExplore: "Explore Menu",
     featuredTitle: "Top Ordered in Santa Ana",
-    catalogTitle: "Full Catalog",
-    catalogSubtitle: "Select a category to view items and prices.",
+    catalogTitle: "Our Products",
+    catalogSubtitle: "Official La Liko Store prices with express delivery.",
     orderBtn: "Order via WhatsApp",
-    waMsg: "Hello La Liko Store! I would like to place an order for:"
+    waMsg: "Hello La Liko Store! I would like to order:"
   }
 };
 
-// Real La Liko Store Menu Catalog with Images & Local Prices
+// Complete La Liko Store Inventory from Spreadsheet
 const products = [
-  // Licores / Spirits
+  // --- WINE ---
   {
     id: 1,
-    title: { es: "Cacique Guaro Tradicional 1L", en: "Cacique Guaro Traditional 1L" },
-    category: "liquor",
-    priceCRC: 9500,
+    title: { es: "Marqués de Cáceres Tinto Crianza Rioja", en: "Marqués de Cáceres Red Crianza Rioja" },
+    size: "750 ml",
+    abv: "14%",
+    category: "wine",
+    priceCRC: 15840,
     featured: true,
-    image: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?q=80&w=800&auto=format&fit=crop",
-    tag: { es: "Popular Costa Rica", en: "CR Favorite" }
+    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Vino Tinto", en: "Red Wine" }
   },
   {
     id: 2,
-    title: { es: "Tequila Don Julio 1942 750ml", en: "Don Julio 1942 Tequila 750ml" },
-    category: "liquor",
-    priceCRC: 90000,
-    featured: true,
-    image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop",
-    tag: { es: "Ultra Premium", en: "Ultra Premium" }
+    title: { es: "Vino Rucio Sangría", en: "Vino Rucio Sangría" },
+    size: "1 L",
+    abv: "7%",
+    category: "wine",
+    priceCRC: 4356,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Sangría", en: "Sangria" }
   },
   {
     id: 3,
-    title: { es: "Ron Flor de Caña 12 Años 750ml", en: "Flor de Caña 12 Year Rum 750ml" },
-    category: "liquor",
-    priceCRC: 17500,
+    title: { es: "Vino Casillero del Diablo Malbec", en: "Casillero del Diablo Malbec Wine" },
+    size: "750 ml",
+    abv: "",
+    category: "wine",
+    priceCRC: 9240,
     featured: false,
-    image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop",
-    tag: { es: "Recomendado", en: "Recommended" }
+    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Vino Tinto", en: "Red Wine" }
   },
-
-  // Cervezas / Beers
   {
     id: 4,
-    title: { es: "Cerveza Imperial Pack (6 Latas)", en: "Imperial Beer 6-Pack (Cans)" },
-    category: "beer",
-    priceCRC: 6000,
-    featured: true,
-    image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop",
-    tag: { es: "Fría Express", en: "Cold Express" }
+    title: { es: "Vino Frontera Merlot", en: "Frontera Merlot Wine" },
+    size: "750 ml",
+    abv: "",
+    category: "wine",
+    priceCRC: 6996,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Vino Tinto", en: "Red Wine" }
   },
   {
     id: 5,
-    title: { es: "Cerveza Heineken Pack (6 Botellas)", en: "Heineken Beer 6-Pack (Bottles)" },
+    title: { es: "Vino Frontera Sauvignon Blanc", en: "Frontera Sauvignon Blanc Wine" },
+    size: "750 ml",
+    abv: "",
+    category: "wine",
+    priceCRC: 6996,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Vino Blanco", en: "White Wine" }
+  },
+  {
+    id: 6,
+    title: { es: "Peñasol Sangría Blanca Original", en: "Peñasol White Sangria Original" },
+    size: "1 L",
+    abv: "7%",
+    category: "wine",
+    priceCRC: 4422,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Sangría", en: "Sangria" }
+  },
+
+  // --- TEQUILA & MEZCAL ---
+  {
+    id: 7,
+    title: { es: "Tequila Gran Malo Joven", en: "Gran Malo Joven Tequila" },
+    size: "750 ml",
+    abv: "40%",
+    category: "tequila",
+    priceCRC: 26400,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Tequila", en: "Tequila" }
+  },
+  {
+    id: 8,
+    title: { es: "Horchata Mezcal 400", en: "Horchata Mezcal 400" },
+    size: "750 ml",
+    abv: "",
+    category: "tequila",
+    priceCRC: 31020,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Mezcal", en: "Mezcal" }
+  },
+  {
+    id: 9,
+    title: { es: "Conejos Espadín Tamarindo", en: "Conejos Espadín Tamarind Mezcal" },
+    size: "750 ml",
+    abv: "30%",
+    category: "tequila",
+    priceCRC: 15840,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Mezcal Artesanal", en: "Artisanal Mezcal" }
+  },
+  {
+    id: 10,
+    title: { es: "Tequila 1800 Silver", en: "1800 Silver Tequila" },
+    size: "750 ml",
+    abv: "",
+    category: "tequila",
+    priceCRC: 75900,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Tequila Premium", en: "Premium Tequila" }
+  },
+  {
+    id: 11,
+    title: { es: "Don Julio Tequila Añejo", en: "Don Julio Añejo Tequila" },
+    size: "750 ml",
+    abv: "",
+    category: "tequila",
+    priceCRC: 22440,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Destacado", en: "Featured" }
+  },
+  {
+    id: 12,
+    title: { es: "Gran Malo Licor Con Tequila / El Jimador", en: "Gran Malo Tequila Liqueur / El Jimador" },
+    size: "750 ml",
+    abv: "",
+    category: "tequila",
+    priceCRC: 19140,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Tequila", en: "Tequila" }
+  },
+
+  // --- BEER & CIDER ---
+  {
+    id: 13,
+    title: { es: "Imperial Cerveza Light", en: "Imperial Light Beer" },
+    size: "350 ml",
+    abv: "",
     category: "beer",
-    priceCRC: 7000,
+    priceCRC: 1122,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Fría", en: "Cold" }
+  },
+  {
+    id: 14,
+    title: { es: "Imperial Cerveza Regular", en: "Imperial Regular Beer" },
+    size: "350 ml",
+    abv: "4.5%",
+    category: "beer",
+    priceCRC: 1122,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Popular CR", en: "Top CR" }
+  },
+  {
+    id: 15,
+    title: { es: "Heineken Cerveza Lager", en: "Heineken Lager Beer" },
+    size: "355 ml",
+    abv: "5%",
+    category: "beer",
+    priceCRC: 1400,
     featured: false,
     image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop",
     tag: { es: "Importada", en: "Imported" }
   },
-
-  // Mezcladores / Mixers
   {
-    id: 6,
-    title: { es: "Coca-Cola Sin Azúcar 2.5L", en: "Coca-Cola Zero Sugar 2.5L" },
-    category: "mixers",
-    priceCRC: 2570,
+    id: 16,
+    title: { es: "Heineken Cerveza Original", en: "Heineken Original Beer" },
+    size: "330 ml",
+    abv: "",
+    category: "beer",
+    priceCRC: 1848,
     featured: false,
-    image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop",
-    tag: { es: "Mezclador", en: "Mixer" }
+    image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Importada", en: "Imported" }
   },
   {
-    id: 7,
-    title: { es: "Ocean Spray Jugo de Arándano 1L", en: "Ocean Spray Cranberry Juice 1L" },
-    category: "mixers",
-    priceCRC: 5995,
+    id: 17,
+    title: { es: "Pilsen Cerveza Rubia Regular", en: "Pilsen Regular Blonde Beer" },
+    size: "350 ml",
+    abv: "4.4%",
+    category: "beer",
+    priceCRC: 1122,
     featured: false,
-    image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=800&auto=format&fit=crop",
-    tag: { es: "Mezclador", en: "Mixer" }
-  },
-
-  // Snacks
-  {
-    id: 8,
-    title: { es: "Pringles Original 149g", en: "Pringles Original 149g" },
-    category: "snacks",
-    priceCRC: 2450,
-    featured: true,
-    image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=800&auto=format&fit=crop",
-    tag: { es: "Snack Top", en: "Top Snack" }
+    image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Nacional", en: "Local" }
   },
   {
-    id: 9,
-    title: { es: "Maní Fiesta Mix Pro 300g", en: "Fiesta Mix Pro Peanuts 300g" },
-    category: "snacks",
-    priceCRC: 2500,
+    id: 18,
+    title: { es: "Imperial Cerveza Ultra", en: "Imperial Ultra Beer" },
+    size: "350 ml",
+    abv: "4%",
+    category: "beer",
+    priceCRC: 1122,
     featured: false,
-    image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=800&auto=format&fit=crop",
-    tag: { es: "Snack", en: "Snack" }
+    image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop",
+    tag: { es: "Low Cal", en: "Low Cal" }
   }
 ];
 
@@ -157,11 +272,12 @@ function renderFeatured() {
     const titleText = item.title[currentLang];
     const tagText = item.tag[currentLang];
     const priceText = formatPrice(item.priceCRC);
+    const metaDetails = item.abv ? `${item.size} • ${item.abv}` : item.size;
 
     const card = document.createElement("div");
     card.className = "bg-zinc-900 border border-amber-500/20 rounded-xl overflow-hidden p-4 flex flex-col justify-between";
     card.innerHTML = `
-      <div class="relative h-40 mb-3 overflow-hidden rounded-lg bg-zinc-950">
+      <div class="relative h-44 mb-3 overflow-hidden rounded-lg bg-zinc-950">
         <img src="${item.image}" alt="${titleText}" class="w-full h-full object-cover" />
         <span class="absolute top-2 left-2 bg-amber-500 text-zinc-950 font-bold text-[10px] px-2 py-0.5 rounded-full uppercase">
           ${tagText}
@@ -169,6 +285,7 @@ function renderFeatured() {
       </div>
       <div>
         <h4 class="font-bold text-sm text-white mb-1 line-clamp-1">${titleText}</h4>
+        <p class="text-xs text-zinc-400 mb-2">${metaDetails}</p>
         <p class="text-amber-400 font-black text-lg mb-3">${priceText}</p>
         <button onclick="orderProduct('${titleText}', '${priceText}')" class="w-full py-2 rounded-lg text-xs font-bold bg-amber-500 text-zinc-950 hover:bg-amber-400 transition-colors">
           ${i18n[currentLang].orderBtn}
@@ -192,6 +309,7 @@ function renderProducts(filter) {
     const titleText = product.title[currentLang];
     const tagText = product.tag[currentLang];
     const priceText = formatPrice(product.priceCRC);
+    const metaDetails = product.abv ? `${product.size} • Alc. ${product.abv}` : product.size;
 
     const card = document.createElement("div");
     card.className = "product-card bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden flex flex-col justify-between";
@@ -205,7 +323,8 @@ function renderProducts(filter) {
       </div>
       <div class="p-6 flex flex-col flex-grow justify-between">
         <div>
-          <h3 class="text-xl font-bold text-white mb-2">${titleText}</h3>
+          <h3 class="text-xl font-bold text-white mb-1">${titleText}</h3>
+          <p class="text-xs font-semibold text-zinc-400 mb-3">${metaDetails}</p>
           <p class="text-amber-400 font-extrabold text-2xl mb-4">${priceText}</p>
         </div>
         <button onclick="orderProduct('${titleText}', '${priceText}')" class="w-full py-3 rounded-xl font-semibold bg-zinc-800 hover:bg-amber-500 hover:text-zinc-950 text-white transition-all flex items-center justify-center gap-2 cursor-pointer">
@@ -232,7 +351,6 @@ function setupToggles() {
     langBtn.onclick = () => {
       currentLang = currentLang === 'es' ? 'en' : 'es';
       if (langLabel) langLabel.textContent = currentLang === 'es' ? '🇲🇽 ES' : '🇺🇸 EN';
-      updateStaticTexts();
       renderFeatured();
       renderProducts('all');
     };
@@ -246,30 +364,6 @@ function setupToggles() {
       renderProducts('all');
     };
   }
-}
-
-function updateStaticTexts() {
-  const t = i18n[currentLang];
-  
-  const navFeatured = document.getElementById("nav-featured");
-  const navCatalog = document.getElementById("nav-catalog");
-  const navCta = document.getElementById("nav-cta");
-  const heroBadge = document.getElementById("hero-badge");
-  const heroTitle = document.getElementById("hero-title");
-  const heroSubtitle = document.getElementById("hero-subtitle");
-  const heroBtnExplore = document.getElementById("hero-btn-explore");
-  const featuredTitle = document.getElementById("section-featured-title");
-  const catalogTitle = document.getElementById("catalog-title");
-  const catalogSubtitle = document.getElementById("catalog-subtitle");
-
-  if (navFeatured) navFeatured.textContent = t.navFeatured;
-  if (navCatalog) navCatalog.textContent = t.navCatalog;
-  if (navCta) navCta.textContent = t.navCta;
-  if (heroTitle) heroTitle.innerHTML = `${t.heroTitle.split('.')[0]}<br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500">${t.heroTitle.split('.')[1] || ''}</span>`;
-  if (heroSubtitle) heroSubtitle.textContent = t.heroSubtitle;
-  if (heroBtnExplore) heroBtnExplore.textContent = t.heroBtnExplore;
-  if (catalogTitle) catalogTitle.textContent = t.catalogTitle;
-  if (catalogSubtitle) catalogSubtitle.textContent = t.catalogSubtitle;
 }
 
 function setupFilterListeners() {
