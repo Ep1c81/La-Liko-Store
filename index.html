@@ -40,11 +40,10 @@
   <header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/60">
     <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between gap-4">
       
-      <!-- Prominent Brand Logo -->
-      <!-- High-Impact Horizontal Logo -->
-<a href="#" class="flex items-center group py-1">
-  <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 160' width='500' height='160'><circle cx='80' cy='80' r='60' fill='%23f97316'/><circle cx='80' cy='52' r='16' fill='%23000'/><path d='M35 125 C35 90, 70 70, 105 80 L138 65 L148 80 L115 95 C88 110, 80 125, 80 145 Z' fill='%23000'/><rect x='125' y='48' width='40' height='18' rx='4' fill='%23fff' transform='rotate(-20 125 48)'/><text x='160' y='95' font-family='Arial Black, sans-serif' font-weight='900' font-size='68' fill='%23f97316'>La LIKO</text><text x='165' y='140' font-family='Arial, sans-serif' font-weight='800' font-size='38' fill='%23ffffff' letter-spacing='6'>STORE</text></svg>" alt="La Liko Store Logo" class="h-12 md:h-16 w-auto object-contain transition-transform group-hover:scale-105" />
-</a>
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center group py-1">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 160' width='500' height='160'><circle cx='80' cy='80' r='60' fill='%23f97316'/><circle cx='80' cy='52' r='16' fill='%23000'/><path d='M35 125 C35 90, 70 70, 105 80 L138 65 L148 80 L115 95 C88 110, 80 125, 80 145 Z' fill='%23000'/><rect x='125' y='48' width='40' height='18' rx='4' fill='%23fff' transform='rotate(-20 125 48)'/><text x='160' y='95' font-family='Arial Black, sans-serif' font-weight='900' font-size='68' fill='%23f97316'>La LIKO</text><text x='165' y='140' font-family='Arial, sans-serif' font-weight='800' font-size='38' fill='%23ffffff' letter-spacing='6'>STORE</text></svg>" alt="La Liko Store Logo" class="h-12 md:h-16 w-auto object-contain transition-transform group-hover:scale-105" />
+      </a>
 
       <nav class="hidden md:flex space-x-8 text-sm font-medium text-zinc-400">
         <a href="#featured" id="nav-featured" class="hover:text-amber-400 transition-colors">Destacados</a>
@@ -85,7 +84,7 @@
       </h1>
       
       <p id="hero-subtitle" class="max-w-2xl mx-auto text-zinc-400 text-base md:text-lg mb-8">
-        Tu licorera express en Santa Ana. Servicio rápido a domicilio de vinos, cervezas frías y destilados.
+        Tu licorera express en Santa Ana. Servicio rápido a domicilio de vinos, cervezas frías, snacks y destilados.
       </p>
     </div>
   </section>
@@ -110,15 +109,15 @@
         </div>
 
         <!-- Filter Category Buttons -->
-<div id="filter-buttons" class="flex flex-wrap gap-2">
-  <button data-category="all" class="filter-btn active-filter px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer">Todos / All</button>
-  <button data-category="wine" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer">Vinos / Wine</button>
-  <button data-category="tequila" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer">Tequila & Mezcal</button>
-  <button data-category="beer" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer">Cervezas / Beer</button>
-  <button data-category="snacks" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer">Chips & Snacks</button>
-  <button data-category="drinks" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer">Bebidas & Energéticas</button>
-  <button data-category="extras" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer">Cigarrillos & Dulces</button>
-</div>
+        <div id="filter-buttons" class="flex flex-wrap gap-2">
+          <button data-category="all" class="filter-btn active-filter px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer">Todos / All</button>
+          <button data-category="wine" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer">Vinos / Wine</button>
+          <button data-category="tequila" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer">Tequila & Mezcal</button>
+          <button data-category="beer" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer">Cervezas / Beer</button>
+          <button data-category="snacks" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer">Chips & Snacks</button>
+          <button data-category="drinks" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer">Bebidas & Energéticas</button>
+          <button data-category="extras" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer">Cigarrillos & Dulces</button>
+        </div>
       </div>
 
       <!-- Product Grid -->
@@ -126,13 +125,22 @@
     </div>
   </section>
 
+  <!-- WhatsApp Floating Contact Button -->
+  <a id="wa-float-btn" href="https://wa.me/50688888888?text=Hola%20La%20Liko%20Store!%20Tengo%20una%20consulta." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-400 text-zinc-950 p-4 rounded-full shadow-2xl transition-all duration-300 flex items-center gap-2 group hover:scale-105">
+    <i data-lucide="message-circle" class="w-6 h-6 fill-current"></i>
+    <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 text-xs font-bold pr-1">Contacto WhatsApp</span>
+  </a>
+
   <!-- Footer -->
   <footer class="py-10 border-t border-zinc-800 bg-zinc-950 text-center text-zinc-500 text-sm">
     <p>&copy; 2026 La Liko Store (Santa Ana). Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Execution Logic -->
+  <!-- Script Logic -->
   <script>
+    // CHANGE THIS TO YOUR ACTUAL PHONE NUMBER (Include country code, e.g. 50688888888)
+    const WHATSAPP_PHONE = "50688888888";
+
     let currentLang = 'es';
     let currentCurrency = 'CRC';
     const exchangeRate = 500;
@@ -160,174 +168,24 @@
       }
     };
 
-    // Full Catalog Data including Convenience Items
-const products = [
-  // --- WINE & SANGRIA ---
-  { 
-    id: 1, 
-    title: { es: "Marqués de Cáceres Tinto Crianza Rioja", en: "Marqués de Cáceres Red Crianza Rioja" }, 
-    size: "750 ml", 
-    abv: "14%", 
-    category: "wine", 
-    priceCRC: 15840, 
-    featured: true, 
-    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Vino Tinto", en: "Red Wine" } 
-  },
-  { 
-    id: 2, 
-    title: { es: "Vino Rucio Sangría", en: "Vino Rucio Sangría" }, 
-    size: "1 L", 
-    abv: "7%", 
-    category: "wine", 
-    priceCRC: 4356, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Sangría", en: "Sangria" } 
-  },
-  { 
-    id: 3, 
-    title: { es: "Vino Casillero del Diablo Malbec", en: "Casillero del Diablo Malbec" }, 
-    size: "750 ml", 
-    abv: "", 
-    category: "wine", 
-    priceCRC: 9240, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Vino Tinto", en: "Red Wine" } 
-  },
-  { 
-    id: 4, 
-    title: { es: "Vino Frontera Merlot", en: "Frontera Merlot Wine" }, 
-    size: "750 ml", 
-    abv: "", 
-    category: "wine", 
-    priceCRC: 6996, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Vino Tinto", en: "Red Wine" } 
-  },
+    const products = [
+      { id: 1, title: { es: "Marqués de Cáceres Tinto Crianza Rioja", en: "Marqués de Cáceres Red Crianza Rioja" }, size: "750 ml", abv: "14%", category: "wine", priceCRC: 15840, featured: true, image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800&auto=format&fit=crop", tag: { es: "Vino Tinto", en: "Red Wine" } },
+      { id: 2, title: { es: "Vino Rucio Sangría", en: "Vino Rucio Sangría" }, size: "1 L", abv: "7%", category: "wine", priceCRC: 4356, featured: false, image: "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?q=80&w=800&auto=format&fit=crop", tag: { es: "Sangría", en: "Sangria" } },
+      { id: 3, title: { es: "Vino Casillero del Diablo Malbec", en: "Casillero del Diablo Malbec" }, size: "750 ml", abv: "", category: "wine", priceCRC: 9240, featured: false, image: "https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?q=80&w=800&auto=format&fit=crop", tag: { es: "Vino Tinto", en: "Red Wine" } },
+      { id: 4, title: { es: "Vino Frontera Merlot", en: "Frontera Merlot Wine" }, size: "750 ml", abv: "", category: "wine", priceCRC: 6996, featured: false, image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=800&auto=format&fit=crop", tag: { es: "Vino Tinto", en: "Red Wine" } },
+      { id: 7, title: { es: "Tequila Gran Malo Joven", en: "Gran Malo Joven Tequila" }, size: "750 ml", abv: "40%", category: "tequila", priceCRC: 26400, featured: true, image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Botella_de_Tequila_%22Gran_Malo%22_de_Luisito_Comunica.png/454px-Botella_de_Tequila_%22Gran_Malo%22_de_Luisito_Comunica.png", tag: { es: "Tequila", en: "Tequila" } },
+      { id: 11, title: { es: "Don Julio Tequila Añejo", en: "Don Julio Añejo Tequila" }, size: "750 ml", abv: "", category: "tequila", priceCRC: 22440, featured: true, image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Tequila_Don_Julio.jpg/600px-Tequila_Don_Julio.jpg", tag: { es: "Destacado", en: "Featured" } },
+      { id: 14, title: { es: "Imperial Cerveza Regular", en: "Imperial Regular Beer" }, size: "350 ml", abv: "4.5%", category: "beer", priceCRC: 1122, featured: true, image: "https://images.unsplash.com/photo-1618886614638-80e3c103d31a?q=80&w=800&auto=format&fit=crop", tag: { es: "Popular CR", en: "Top CR" } },
+      { id: 15, title: { es: "Heineken Cerveza Lager", en: "Heineken Lager Beer" }, size: "355 ml", abv: "5%", category: "beer", priceCRC: 1400, featured: false, image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop", tag: { es: "Importada", en: "Imported" } },
+      { id: 19, title: { es: "Pringles Original", en: "Pringles Original" }, size: "124 g", abv: "", category: "snacks", priceCRC: 2200, featured: true, image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=800&auto=format&fit=crop", tag: { es: "Snack", en: "Snack" } },
+      { id: 20, title: { es: "Doritos Nacho Cheese", en: "Doritos Nacho Cheese" }, size: "198 g", abv: "", category: "snacks", priceCRC: 1850, featured: false, image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=800&auto=format&fit=crop", tag: { es: "Chips", en: "Chips" } },
+      { id: 21, title: { es: "Red Bull Energy Drink", en: "Red Bull Energy Drink" }, size: "250 ml", abv: "", category: "drinks", priceCRC: 1600, featured: true, image: "https://images.unsplash.com/photo-1622543925917-763c34d1a86e?q=80&w=800&auto=format&fit=crop", tag: { es: "Energética", en: "Energy Drink" } },
+      { id: 22, title: { es: "Coca-Cola Sabor Original", en: "Coca-Cola Original" }, size: "600 ml", abv: "", category: "drinks", priceCRC: 1100, featured: false, image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop", tag: { es: "Refresco", en: "Soda" } },
+      { id: 23, title: { es: "Marlboro Red Cajetilla", en: "Marlboro Red Pack" }, size: "20 cigarrillos", abv: "", category: "extras", priceCRC: 2700, featured: false, image: "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?q=80&w=800&auto=format&fit=crop", tag: { es: "Tabaco", en: "Tobacco" } },
+      { id: 24, title: { es: "Chicles Trident Menta", en: "Trident Spearmint Gum" }, size: "Pack 14 pcs", abv: "", category: "extras", priceCRC: 850, featured: false, image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?q=80&w=800&auto=format&fit=crop", tag: { es: "Chicles", en: "Gum" } }
+    ];
 
-  // --- TEQUILA & MEZCAL ---
-  { 
-    id: 7, 
-    title: { es: "Tequila Gran Malo Joven", en: "Gran Malo Joven Tequila" }, 
-    size: "750 ml", 
-    abv: "40%", 
-    category: "tequila", 
-    priceCRC: 26400, 
-    featured: true, 
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Botella_de_Tequila_%22Gran_Malo%22_de_Luisito_Comunica.png/454px-Botella_de_Tequila_%22Gran_Malo%22_de_Luisito_Comunica.png", 
-    tag: { es: "Tequila", en: "Tequila" } 
-  },
-  { 
-    id: 11, 
-    title: { es: "Don Julio Tequila Añejo", en: "Don Julio Añejo Tequila" }, 
-    size: "750 ml", 
-    abv: "", 
-    category: "tequila", 
-    priceCRC: 22440, 
-    featured: true, 
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Tequila_Don_Julio.jpg/600px-Tequila_Don_Julio.jpg", 
-    tag: { es: "Destacado", en: "Featured" } 
-  },
-
-  // --- BEER ---
-  { 
-    id: 14, 
-    title: { es: "Imperial Cerveza Regular", en: "Imperial Regular Beer" }, 
-    size: "350 ml", 
-    abv: "4.5%", 
-    category: "beer", 
-    priceCRC: 1122, 
-    featured: true, 
-    image: "https://images.unsplash.com/photo-1618886614638-80e3c103d31a?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Popular CR", en: "Top CR" } 
-  },
-  { 
-    id: 15, 
-    title: { es: "Heineken Cerveza Lager", en: "Heineken Lager Beer" }, 
-    size: "355 ml", 
-    abv: "5%", 
-    category: "beer", 
-    priceCRC: 1400, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Importada", en: "Imported" } 
-  },
-
-  // --- CHIPS & SNACKS ---
-  { 
-    id: 19, 
-    title: { es: "Pringles Original", en: "Pringles Original" }, 
-    size: "124 g", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 2200, 
-    featured: true, 
-    image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Snack", en: "Snack" } 
-  },
-  { 
-    id: 20, 
-    title: { es: "Doritos Nacho Cheese", en: "Doritos Nacho Cheese" }, 
-    size: "198 g", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 1850, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Chips", en: "Chips" } 
-  },
-
-  // --- BEBIDAS & ENERGÉTICAS ---
-  { 
-    id: 21, 
-    title: { es: "Red Bull Energy Drink", en: "Red Bull Energy Drink" }, 
-    size: "250 ml", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 1600, 
-    featured: true, 
-    image: "https://images.unsplash.com/photo-1622543925917-763c34d1a86e?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Energética", en: "Energy Drink" } 
-  },
-  { 
-    id: 22, 
-    title: { es: "Coca-Cola Sabor Original", en: "Coca-Cola Original" }, 
-    size: "600 ml", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 1100, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Refresco", en: "Soda" } 
-  },
-
-  // --- CIGARRILLOS & DULCES ---
-  { 
-    id: 23, 
-    title: { es: "Marlboro Red Cajetilla", en: "Marlboro Red Pack" }, 
-    size: "20 cigarrillos", 
-    abv: "", 
-    category: "extras", 
-    priceCRC: 2700, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Tabaco", en: "Tobacco" } 
-  },
-  { 
-    id: 24, 
-    title: { es: "Chicles Trident Menta", en: "Trident Spearmint Gum" }, 
-    size: "Pack 14 pcs", 
-    abv: "", 
-    category: "extras", 
-    priceCRC: 850, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Chicles", en: "Gum" } 
-  }
-];
+    function formatPrice(priceCRC) {
       return currentCurrency === 'CRC' 
         ? `₡${priceCRC.toLocaleString()}` 
         : `$${(priceCRC / exchangeRate).toFixed(2)}`;
@@ -404,15 +262,20 @@ const products = [
         document.getElementById("lang-label").textContent = currentLang === 'es' ? '🇲🇽 ES' : '🇺🇸 EN';
         updateTexts();
         renderFeatured();
-        renderProducts('all');
+        renderProducts(getActiveCategory());
       };
 
       document.getElementById("toggle-currency").onclick = () => {
         currentCurrency = currentCurrency === 'CRC' ? 'USD' : 'CRC';
         document.getElementById("curr-label").textContent = currentCurrency === 'CRC' ? '₡ CRC' : '$ USD';
         renderFeatured();
-        renderProducts('all');
+        renderProducts(getActiveCategory());
       };
+    }
+
+    function getActiveCategory() {
+      const activeBtn = document.querySelector(".filter-btn.active-filter");
+      return activeBtn ? activeBtn.dataset.category : 'all';
     }
 
     function updateTexts() {
@@ -429,15 +292,15 @@ const products = [
       document.querySelectorAll(".filter-btn").forEach(btn => {
         btn.onclick = (e) => {
           document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active-filter"));
-          e.target.classList.add("active-filter");
-          renderProducts(e.target.dataset.category);
+          e.currentTarget.classList.add("active-filter");
+          renderProducts(e.currentTarget.dataset.category);
         };
       });
     }
 
     function orderProduct(title, price) {
       const message = encodeURIComponent(`${i18n[currentLang].waMsg}\n- ${title} (${price})`);
-      window.open(`https://wa.me/?text=${message}`, '_blank');
+      window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${message}`, '_blank');
     }
 
     document.addEventListener("DOMContentLoaded", () => {
