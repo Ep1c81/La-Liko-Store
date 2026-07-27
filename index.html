@@ -167,276 +167,150 @@
     };
 
     const products = [
-  // --- COMIDA / SNACKS ---
-  { 
-    id: 101, 
-    title: { es: "Picaritas Jacks BBQ", en: "Picaritas Jacks BBQ" }, 
-    size: "150 g", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 1320, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Snack", en: "Snack" } 
-  },
-  { 
-    id: 102, 
-    title: { es: "Chile Pika-zo A LA PUTA", en: "Chile Pika-zo Hot Sauce" }, 
-    size: "200 ml", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 4620, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Picante", en: "Spicy" } 
-  },
-  { 
-    id: 103, 
-    title: { es: "Semilla Mixtas Pro", en: "Pro Mixed Seeds" }, 
-    size: "80 g", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 1584, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1536591375315-198993881372?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Semillas", en: "Seeds" } 
-  },
-  { 
-    id: 104, 
-    title: { es: "Quesitos Tosty", en: "Tosty Quesitos" }, 
-    size: "210 g", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 2508, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1621447504864-d8686e12698c?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Snack", en: "Snack" } 
-  },
-  { 
-    id: 105, 
-    title: { es: "Pringles Original", en: "Pringles Original" }, 
-    size: "149 g", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 2450, 
-    featured: true, 
-    image: "./pringlesoriginales.jpg", 
-    tag: { es: "Snack", en: "Snack" } 
-  },
-  { 
-    id: 106, 
-    title: { es: "Maní Salado Pro", en: "Pro Salted Peanuts" }, 
-    size: "80 g", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 726, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1536591375315-198993881372?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Maní", en: "Peanuts" } 
-  },
-  { 
-    id: 107, 
-    title: { es: "Meneitos Clásicos", en: "Meneitos Classic" }, 
-    size: "120 g", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 1584, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1621447504864-d8686e12698c?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Snack", en: "Snack" } 
-  },
-  { 
-    id: 108, 
-    title: { es: "Chile Pika-zo Irie", en: "Chile Pika-zo Irie" }, 
-    size: "200 ml", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 3960, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Picante", en: "Spicy" } 
-  },
+      // --- WINE & SANGRIA ---
+      { 
+        id: 1, 
+        title: { es: "Marqués de Cáceres Tinto Crianza Rioja", en: "Marqués de Cáceres Red Crianza Rioja" }, 
+        size: "750 ml", 
+        abv: "14%", 
+        category: "wine", 
+        priceCRC: 15840, 
+        featured: true, 
+        image: "./crianza-rioja-marques-de-caceres-botella.jpg", 
+        tag: { es: "Vino Tinto", en: "Red Wine" } 
+      },
+      { 
+        id: 2, 
+        title: { es: "Vino Rucio Sangría", en: "Vino Rucio Sangría" }, 
+        size: "1 L", 
+        abv: "7%", 
+        category: "wine", 
+        priceCRC: 4356, 
+        featured: false, 
+        image: "./vinosangria.png", 
+        tag: { es: "Sangría", en: "Sangria" } 
+      },
 
-  // --- MEZCLADORES Y BEBIDAS ---
-  { 
-    id: 201, 
-    title: { es: "Coca-Cola Gaseosa Sin Azúcar", en: "Coca-Cola Zero Sugar" }, 
-    size: "2.5 L", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 2508, 
-    featured: true, 
-    image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Refresco", en: "Soda" } 
-  },
-  { 
-    id: 202, 
-    title: { es: "Canada Dry Bebida Club Soda", en: "Canada Dry Club Soda" }, 
-    size: "600 ml", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 1584, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1527661591475-527312dd65f5?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Mezclador", en: "Mixer" } 
-  },
-  { 
-    id: 203, 
-    title: { es: "Powerade Zero Mixed Berry", en: "Powerade Zero Mixed Berry" }, 
-    size: "591 ml", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 1650, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1622543925917-763c34d1a86e?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Hidratante", en: "Sports Drink" } 
-  },
-  { 
-    id: 204, 
-    title: { es: "Jugo de Tomate Clamato", en: "Clamato Tomato Juice" }, 
-    size: "946 ml", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 5544, 
-    featured: true, 
-    image: "https://images.unsplash.com/photo-1546173159-315724a31696?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Mezclador", en: "Mixer" } 
-  },
-  { 
-    id: 205, 
-    title: { es: "Fever Tree Pink Soda", en: "Fever Tree Pink Soda" }, 
-    size: "200 ml", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 1898, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Premium Mixer", en: "Premium Mixer" } 
-  },
-  { 
-    id: 206, 
-    title: { es: "San Pellegrino Agua Gasificada", en: "San Pellegrino Sparkling Water" }, 
-    size: "500 ml", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 1520, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1560023907-5f339617ea30?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Agua Gas", en: "Sparkling" } 
-  },
-  { 
-    id: 207, 
-    title: { es: "Coca-Cola Sin Azúcar", en: "Coca-Cola Zero Sugar" }, 
-    size: "1.5 L", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 1584, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Refresco", en: "Soda" } 
-  },
-  { 
-    id: 208, 
-    title: { es: "Coca-Cola Gaseosa Original", en: "Coca-Cola Original" }, 
-    size: "1.5 L", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 1892, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Refresco", en: "Soda" } 
-  },
-  { 
-    id: 209, 
-    title: { es: "Coca-Cola Gaseosa Original", en: "Coca-Cola Original" }, 
-    size: "3 L", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 3571, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Familia", en: "Family Size" } 
-  },
-  { 
-    id: 210, 
-    title: { es: "Canada Dry Light Ginger Ale", en: "Canada Dry Light Ginger Ale" }, 
-    size: "600 ml", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 1320, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1527661591475-527312dd65f5?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Refresco", en: "Soda" } 
-  },
+      // --- TEQUILA & MEZCAL ---
+      { 
+        id: 7, 
+        title: { es: "Tequila Gran Malo Joven", en: "Gran Malo Joven Tequila" }, 
+        size: "750 ml", 
+        abv: "40%", 
+        category: "tequila", 
+        priceCRC: 26400, 
+        featured: true, 
+        image: "./granmalo.png", 
+        tag: { es: "Tequila", en: "Tequila" } 
+      },
+      { 
+        id: 11, 
+        title: { es: "Don Julio Tequila Añejo", en: "Don Julio Añejo Tequila" }, 
+        size: "750 ml", 
+        abv: "", 
+        category: "tequila", 
+        priceCRC: 22440, 
+        featured: true, 
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' width='100%' height='100%'><rect width='400' height='400' fill='%230f0f11'/><path d='M140 310 C130 180, 150 140, 185 130 L185 80 L215 80 L215 130 C250 140, 270 180, 260 310 Z' fill='%2318181b' stroke='%23f59e0b' stroke-width='4'/><rect x='180' y='65' width='40' height='20' rx='4' fill='%23713f12'/><rect x='155' y='190' width='90' height='70' rx='4' fill='%23fef3c7'/><text x='200' y='225' font-family='Georgia, serif' font-style='italic' font-weight='bold' font-size='15' fill='%23000' text-anchor='middle'>Don Julio</text><text x='200' y='245' font-family='Arial' font-size='10' font-weight='bold' fill='%23b45309' text-anchor='middle'>AÑEJO</text></svg>", 
+        tag: { es: "Destacado", en: "Featured" } 
+      },
 
-  // --- TABACO ---
-  { 
-    id: 301, 
-    title: { es: "Pall Mall Cigarrillos Azul", en: "Pall Mall Cigarettes Blue" }, 
-    size: "20 un", 
-    abv: "", 
-    category: "extras", 
-    priceCRC: 3200, 
-    featured: false, 
-    image: "./Marlboro Red.png", 
-    tag: { es: "Tabaco", en: "Tobacco" } 
-  },
-  { 
-    id: 302, 
-    title: { es: "Pall Mall Cigarrillos Red", en: "Pall Mall Cigarettes Red" }, 
-    size: "20 un", 
-    abv: "", 
-    category: "extras", 
-    priceCRC: 3200, 
-    featured: false, 
-    image: "./Marlboro Red.png", 
-    tag: { es: "Tabaco", en: "Tobacco" } 
-  },
-  { 
-    id: 303, 
-    title: { es: "Chesterfield Rojo Largo", en: "Chesterfield Red Long" }, 
-    size: "20 un", 
-    abv: "", 
-    category: "extras", 
-    priceCRC: 3250, 
-    featured: false, 
-    image: "./Marlboro Red.png", 
-    tag: { es: "Tabaco", en: "Tobacco" } 
-  },
-  { 
-    id: 304, 
-    title: { es: "Pall Mall Tokio", en: "Pall Mall Tokyo" }, 
-    size: "20 un", 
-    abv: "", 
-    category: "extras", 
-    priceCRC: 3200, 
-    featured: false, 
-    image: "./Marlboro Red.png", 
-    tag: { es: "Tabaco", en: "Tobacco" } 
-  },
-  { 
-    id: 305, 
-    title: { es: "Pall Mall California", en: "Pall Mall California" }, 
-    size: "20 un", 
-    abv: "", 
-    category: "extras", 
-    priceCRC: 3200, 
-    featured: false, 
-    image: "./Marlboro Red.png", 
-    tag: { es: "Tabaco", en: "Tobacco" } 
-  },
-  { 
-    id: 306, 
-    title: { es: "Chesterfield Rojo Corto", en: "Chesterfield Red Short" }, 
-    size: "20 un", 
-    abv: "", 
-    category: "extras", 
-    priceCRC: 3500, 
-    featured: false, 
-    image: "./Marlboro Red.png", 
-    tag: { es: "Tabaco", en: "Tobacco" } 
-  }
-];
+      // --- BEER ---
+      { 
+        id: 14, 
+        title: { es: "Imperial Cerveza Regular", en: "Imperial Regular Beer" }, 
+        size: "350 ml", 
+        abv: "4.5%", 
+        category: "beer", 
+        priceCRC: 1122, 
+        featured: true, 
+        image: "./imperial1.jpg", 
+        tag: { es: "Popular CR", en: "Top CR" } 
+      },
+      { 
+        id: 15, 
+        title: { es: "Heineken Cerveza Lager", en: "Heineken Lager Beer" }, 
+        size: "355 ml", 
+        abv: "5%", 
+        category: "beer", 
+        priceCRC: 1400, 
+        featured: false, 
+        image: "./hnk-original-bottle.png", 
+        tag: { es: "Importada", en: "Imported" } 
+      },
+
+      // --- CHIPS & SNACKS ---
+      { 
+        id: 19, 
+        title: { es: "Pringles Original", en: "Pringles Original" }, 
+        size: "124 g", 
+        abv: "", 
+        category: "snacks", 
+        priceCRC: 2200, 
+        featured: true, 
+        image: "./pringlesoriginales.jpg", 
+        tag: { es: "Snack", en: "Snack" } 
+      },
+      { 
+        id: 20, 
+        title: { es: "Doritos Nacho Cheese", en: "Doritos Nacho Cheese" }, 
+        size: "198 g", 
+        abv: "", 
+        category: "snacks", 
+        priceCRC: 1850, 
+        featured: false, 
+        image: "./doritos2.jpg", 
+        tag: { es: "Chips", en: "Chips" } 
+      },
+
+      // --- BEBIDAS & ENERGÉTICAS ---
+      { 
+        id: 21, 
+        title: { es: "Red Bull Energy Drink", en: "Red Bull Energy Drink" }, 
+        size: "250 ml", 
+        abv: "", 
+        category: "drinks", 
+        priceCRC: 1600, 
+        featured: true, 
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' width='100%' height='100%'><rect width='400' height='400' fill='%230f0f11'/><rect x='160' y='90' width='80' height='220' rx='15' fill='%232563eb'/><path d='M160 90 L240 310 L240 90 Z' fill='%23cbd5e1'/><circle cx='200' cy='200' r='30' fill='%23eab308'/><text x='200' y='206' font-family='Arial Black' font-size='12' fill='%23dc2626' text-anchor='middle'>RedBull</text></svg>", 
+        tag: { es: "Energética", en: "Energy Drink" } 
+      },
+      { 
+        id: 22, 
+        title: { es: "Coca-Cola Sabor Original", en: "Coca-Cola Original" }, 
+        size: "600 ml", 
+        abv: "", 
+        category: "drinks", 
+        priceCRC: 1100, 
+        featured: false, 
+        image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop", 
+        tag: { es: "Refresco", en: "Soda" } 
+      },
+
+      // --- CIGARRILLOS & DULCES ---
+      { 
+        id: 23, 
+        title: { es: "Marlboro Red Cajetilla", en: "Marlboro Red Pack" }, 
+        size: "20 cigarrillos", 
+        abv: "", 
+        category: "extras", 
+        priceCRC: 2700, 
+        featured: false, 
+        image: "./Marlboro Red.png", 
+        tag: { es: "Tabaco", en: "Tobacco" } 
+      },
+      { 
+        id: 24, 
+        title: { es: "Chicles Trident Menta", en: "Trident Spearmint Gum" }, 
+        size: "Pack 14 pcs", 
+        abv: "", 
+        category: "extras", 
+        priceCRC: 850, 
+        featured: false, 
+        image: "./trident1.jpeg", 
+        tag: { es: "Chicles", en: "Gum" } 
+      }
+    ];
 
     function formatPrice(priceCRC) {
       if (currentCurrency === 'CRC') {
