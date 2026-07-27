@@ -138,327 +138,257 @@
 
   <!-- Script Logic -->
   <script>
-    // CHANGE THIS TO YOUR ACTUAL PHONE NUMBER (Include country code, e.g. 50688888888)
-    const WHATSAPP_PHONE = "50688888888";
-
+    const WHATSAPP_PHONE = "50670404610";
+    const exchangeRate = 515;
     let currentLang = 'es';
     let currentCurrency = 'CRC';
-    const exchangeRate = 500;
 
     const i18n = {
       es: {
         navFeatured: "Destacados",
         navCatalog: "Catálogo",
         navCta: "Ordenar",
-        featuredTitle: "Lo Más Pedido en Santa Ana",
+        featuredTitle: "Lo Más Pedido en <span class='text-amber-500'>Santa Ana</span>",
         catalogTitle: "Catálogo Completo",
         catalogSubtitle: "Precios oficiales de La Liko Store con envío express.",
         orderBtn: "Pedir por WhatsApp",
-        waMsg: "Hola La Liko Store! Me gustaría ordenar:"
+        waMsg: "Hola La Liko Store, me gustaría ordenar:"
       },
       en: {
         navFeatured: "Featured",
         navCatalog: "Catalog",
         navCta: "Order Now",
-        featuredTitle: "Top Ordered in Santa Ana",
+        featuredTitle: "Top Orders in <span class='text-amber-500'>Santa Ana</span>",
         catalogTitle: "Full Catalog",
-        catalogSubtitle: "Official La Liko Store prices with express delivery.",
+        catalogSubtitle: "Official prices with express delivery in Santa Ana & San José.",
         orderBtn: "Order via WhatsApp",
-        waMsg: "Hello La Liko Store! I would like to order:"
+        waMsg: "Hello La Liko Store, I would like to order:"
       }
     };
 
     const products = [
-  // --- WINE & SANGRIA ---
-  { 
-    id: 1, 
-    title: { es: "Marqués de Cáceres Tinto Crianza Rioja", en: "Marqués de Cáceres Red Crianza Rioja" }, 
-    size: "750 ml", 
-    abv: "14%", 
-    category: "wine", 
-    priceCRC: 15840, 
-    featured: true, 
-    image: "./crianza-rioja-marques-de-caceres-botella.jpg", 
-    tag: { es: "Vino Tinto", en: "Red Wine" } 
-  },
-  { 
-    id: 2, 
-    title: { es: "Vino Rucio Sangría", en: "Vino Rucio Sangría" }, 
-    size: "1 L", 
-    abv: "7%", 
-    category: "wine", 
-    priceCRC: 4356, 
-    featured: false, 
-    image: "./vinosangria.png", 
-    tag: { es: "Sangría", en: "Sangria" } 
-  },
+      // --- WINE & SANGRIA ---
+      { 
+        id: 1, 
+        title: { es: "Marqués de Cáceres Tinto Crianza Rioja", en: "Marqués de Cáceres Red Crianza Rioja" }, 
+        size: "750 ml", 
+        abv: "14%", 
+        category: "wine", 
+        priceCRC: 15840, 
+        featured: true, 
+        image: "./crianza-rioja-marques-de-caceres-botella.jpg", 
+        tag: { es: "Vino Tinto", en: "Red Wine" } 
+      },
+      { 
+        id: 2, 
+        title: { es: "Vino Rucio Sangría", en: "Vino Rucio Sangría" }, 
+        size: "1 L", 
+        abv: "7%", 
+        category: "wine", 
+        priceCRC: 4356, 
+        featured: false, 
+        image: "./vinosangria.png", 
+        tag: { es: "Sangría", en: "Sangria" } 
+      },
 
-  // --- TEQUILA & MEZCAL ---
-  { 
-    id: 7, 
-    title: { es: "Tequila Gran Malo Joven", en: "Gran Malo Joven Tequila" }, 
-    size: "750 ml", 
-    abv: "40%", 
-    category: "tequila", 
-    priceCRC: 26400, 
-    featured: true, 
-    image: "./granmalo.png", 
-    tag: { es: "Tequila", en: "Tequila" } 
-  },
-  { 
-    id: 11, 
-    title: { es: "Don Julio Tequila Añejo", en: "Don Julio Añejo Tequila" }, 
-    size: "750 ml", 
-    abv: "", 
-    category: "tequila", 
-    priceCRC: 22440, 
-    featured: true, 
-    image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' width='100%' height='100%'><rect width='400' height='400' fill='%230f0f11'/><path d='M140 310 C130 180, 150 140, 185 130 L185 80 L215 80 L215 130 C250 140, 270 180, 260 310 Z' fill='%2318181b' stroke='%23f59e0b' stroke-width='4'/><rect x='180' y='65' width='40' height='20' rx='4' fill='%23713f12'/><rect x='155' y='190' width='90' height='70' rx='4' fill='%23fef3c7'/><text x='200' y='225' font-family='Georgia, serif' font-style='italic' font-weight='bold' font-size='15' fill='%23000' text-anchor='middle'>Don Julio</text><text x='200' y='245' font-family='Arial' font-size='10' font-weight='bold' fill='%23b45309' text-anchor='middle'>AÑEJO</text></svg>", 
-    tag: { es: "Destacado", en: "Featured" } 
-  },
+      // --- TEQUILA & MEZCAL ---
+      { 
+        id: 7, 
+        title: { es: "Tequila Gran Malo Joven", en: "Gran Malo Joven Tequila" }, 
+        size: "750 ml", 
+        abv: "40%", 
+        category: "tequila", 
+        priceCRC: 26400, 
+        featured: true, 
+        image: "./granmalo.png", 
+        tag: { es: "Tequila", en: "Tequila" } 
+      },
+      { 
+        id: 11, 
+        title: { es: "Don Julio Tequila Añejo", en: "Don Julio Añejo Tequila" }, 
+        size: "750 ml", 
+        abv: "", 
+        category: "tequila", 
+        priceCRC: 22440, 
+        featured: true, 
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' width='100%' height='100%'><rect width='400' height='400' fill='%230f0f11'/><path d='M140 310 C130 180, 150 140, 185 130 L185 80 L215 80 L215 130 C250 140, 270 180, 260 310 Z' fill='%2318181b' stroke='%23f59e0b' stroke-width='4'/><rect x='180' y='65' width='40' height='20' rx='4' fill='%23713f12'/><rect x='155' y='190' width='90' height='70' rx='4' fill='%23fef3c7'/><text x='200' y='225' font-family='Georgia, serif' font-style='italic' font-weight='bold' font-size='15' fill='%23000' text-anchor='middle'>Don Julio</text><text x='200' y='245' font-family='Arial' font-size='10' font-weight='bold' fill='%23b45309' text-anchor='middle'>AÑEJO</text></svg>", 
+        tag: { es: "Destacado", en: "Featured" } 
+      },
 
-  // --- BEER ---
-  { 
-    id: 14, 
-    title: { es: "Imperial Cerveza Regular", en: "Imperial Regular Beer" }, 
-    size: "350 ml", 
-    abv: "4.5%", 
-    category: "beer", 
-    priceCRC: 1122, 
-    featured: true, 
-    image: "./imperial1.jpg", 
-    tag: { es: "Popular CR", en: "Top CR" } 
-  },
-  { 
-    id: 15, 
-    title: { es: "Heineken Cerveza Lager", en: "Heineken Lager Beer" }, 
-    size: "355 ml", 
-    abv: "5%", 
-    category: "beer", 
-    priceCRC: 1400, 
-    featured: false, 
-    image: "./hnk-original-bottle.png", 
-    tag: { es: "Importada", en: "Imported" } 
-  },
+      // --- BEER ---
+      { 
+        id: 14, 
+        title: { es: "Imperial Cerveza Regular", en: "Imperial Regular Beer" }, 
+        size: "350 ml", 
+        abv: "4.5%", 
+        category: "beer", 
+        priceCRC: 1122, 
+        featured: true, 
+        image: "./imperial1.jpg", 
+        tag: { es: "Popular CR", en: "Top CR" } 
+      },
+      { 
+        id: 15, 
+        title: { es: "Heineken Cerveza Lager", en: "Heineken Lager Beer" }, 
+        size: "355 ml", 
+        abv: "5%", 
+        category: "beer", 
+        priceCRC: 1400, 
+        featured: false, 
+        image: "./hnk-original-bottle.png", 
+        tag: { es: "Importada", en: "Imported" } 
+      },
 
-  // --- CHIPS & SNACKS ---
-  { 
-    id: 19, 
-    title: { es: "Pringles Original", en: "Pringles Original" }, 
-    size: "124 g", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 2200, 
-    featured: true, 
-    image: "./pringlesoriginales.jpg", 
-    tag: { es: "Snack", en: "Snack" } 
-  },
-  { 
-    id: 20, 
-    title: { es: "Doritos Nacho Cheese", en: "Doritos Nacho Cheese" }, 
-    size: "198 g", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 1850, 
-    featured: false, 
-    image: "./doritos2.jpg", 
-    tag: { es: "Chips", en: "Chips" } 
-  },
+      // --- CHIPS & SNACKS ---
+      { 
+        id: 19, 
+        title: { es: "Pringles Original", en: "Pringles Original" }, 
+        size: "124 g", 
+        abv: "", 
+        category: "snacks", 
+        priceCRC: 2200, 
+        featured: true, 
+        image: "./pringlesoriginales.jpg", 
+        tag: { es: "Snack", en: "Snack" } 
+      },
+      { 
+        id: 20, 
+        title: { es: "Doritos Nacho Cheese", en: "Doritos Nacho Cheese" }, 
+        size: "198 g", 
+        abv: "", 
+        category: "snacks", 
+        priceCRC: 1850, 
+        featured: false, 
+        image: "./doritos2.jpg", 
+        tag: { es: "Chips", en: "Chips" } 
+      },
 
-  // --- BEBIDAS & ENERGÉTICAS ---
-  { 
-    id: 21, 
-    title: { es: "Red Bull Energy Drink", en: "Red Bull Energy Drink" }, 
-    size: "250 ml", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 1600, 
-    featured: true, 
-    image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' width='100%' height='100%'><rect width='400' height='400' fill='%230f0f11'/><rect x='160' y='90' width='80' height='220' rx='15' fill='%232563eb'/><path d='M160 90 L240 310 L240 90 Z' fill='%23cbd5e1'/><circle cx='200' cy='200' r='30' fill='%23eab308'/><text x='200' y='206' font-family='Arial Black' font-size='12' fill='%23dc2626' text-anchor='middle'>RedBull</text></svg>", 
-    tag: { es: "Energética", en: "Energy Drink" } 
-  },
-  { 
-    id: 22, 
-    title: { es: "Coca-Cola Sabor Original", en: "Coca-Cola Original" }, 
-    size: "600 ml", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 1100, 
-    featured: false, 
-    image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop", 
-    tag: { es: "Refresco", en: "Soda" } 
-  },
+      // --- BEBIDAS & ENERGÉTICAS ---
+      { 
+        id: 21, 
+        title: { es: "Red Bull Energy Drink", en: "Red Bull Energy Drink" }, 
+        size: "250 ml", 
+        abv: "", 
+        category: "drinks", 
+        priceCRC: 1600, 
+        featured: true, 
+        image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' width='100%' height='100%'><rect width='400' height='400' fill='%230f0f11'/><rect x='160' y='90' width='80' height='220' rx='15' fill='%232563eb'/><path d='M160 90 L240 310 L240 90 Z' fill='%23cbd5e1'/><circle cx='200' cy='200' r='30' fill='%23eab308'/><text x='200' y='206' font-family='Arial Black' font-size='12' fill='%23dc2626' text-anchor='middle'>RedBull</text></svg>", 
+        tag: { es: "Energética", en: "Energy Drink" } 
+      },
+      { 
+        id: 22, 
+        title: { es: "Coca-Cola Sabor Original", en: "Coca-Cola Original" }, 
+        size: "600 ml", 
+        abv: "", 
+        category: "drinks", 
+        priceCRC: 1100, 
+        featured: false, 
+        image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop", 
+        tag: { es: "Refresco", en: "Soda" } 
+      },
 
-  // --- CIGARRILLOS & DULCES ---
-  { 
-    id: 23, 
-    title: { es: "Marlboro Red Cajetilla", en: "Marlboro Red Pack" }, 
-    size: "20 cigarrillos", 
-    abv: "", 
-    category: "extras", 
-    priceCRC: 2700, 
-    featured: false, 
-    image: "./Marlboro Red.png", 
-    tag: { es: "Tabaco", en: "Tobacco" } 
-  },
-  { 
-    id: 24, 
-    title: { es: "Chicles Trident Menta", en: "Trident Spearmint Gum" }, 
-    size: "Pack 14 pcs", 
-    abv: "", 
-    category: "extras", 
-    priceCRC: 850, 
-    featured: false, 
-    image: "./trident1.jpeg", 
-    tag: { es: "Chicles", en: "Gum" } 
-  }
-];
+      // --- CIGARRILLOS & DULCES ---
+      { 
+        id: 23, 
+        title: { es: "Marlboro Red Cajetilla", en: "Marlboro Red Pack" }, 
+        size: "20 cigarrillos", 
+        abv: "", 
+        category: "extras", 
+        priceCRC: 2700, 
+        featured: false, 
+        image: "./Marlboro Red.png", 
+        tag: { es: "Tabaco", en: "Tobacco" } 
+      },
+      { 
+        id: 24, 
+        title: { es: "Chicles Trident Menta", en: "Trident Spearmint Gum" }, 
+        size: "Pack 14 pcs", 
+        abv: "", 
+        category: "extras", 
+        priceCRC: 850, 
+        featured: false, 
+        image: "./trident1.jpeg", 
+        tag: { es: "Chicles", en: "Gum" } 
+      }
+    ];
 
-function formatPrice(priceCRC) {
-  if (currentCurrency === 'CRC') {
-    return `₡${priceCRC.toLocaleString()}`;
-  } else {
-    return `$${(priceCRC / exchangeRate).toFixed(2)}`;
-  }
-}
+    function formatPrice(priceCRC) {
+      if (currentCurrency === 'CRC') {
+        return `₡${priceCRC.toLocaleString()}`;
+      } else {
+        return `$${(priceCRC / exchangeRate).toFixed(2)}`;
+      }
+    }
 
-function renderFeatured() {
-  const grid = document.getElementById("featured-grid");
-  if (!grid) return;
-  grid.innerHTML = "";
+    function renderFeatured() {
+      const grid = document.getElementById("featured-grid");
+      if (!grid) return;
+      grid.innerHTML = "";
 
-  products.filter(p => p.featured).forEach(item => {
-    const titleText = item.title[currentLang];
-    const tagText = item.tag[currentLang];
-    const priceText = formatPrice(item.priceCRC);
-    const meta = item.abv ? `${item.size} • Alc. ${item.abv}` : item.size;
+      products.filter(p => p.featured).forEach(item => {
+        const titleText = item.title[currentLang];
+        const tagText = item.tag[currentLang];
+        const priceText = formatPrice(item.priceCRC);
+        const meta = item.abv ? `${item.size} • Alc. ${item.abv}` : item.size;
 
-    grid.innerHTML += `
-      <div class="bg-zinc-900 border border-amber-500/20 rounded-xl overflow-hidden p-4 flex flex-col justify-between">
-        <div class="relative h-44 mb-3 overflow-hidden rounded-lg bg-zinc-950 flex items-center justify-center">
-          <img src="${item.image}" alt="${titleText}" class="w-full h-full object-contain p-2" />
-          <span class="absolute top-2 left-2 bg-amber-500 text-zinc-950 font-bold text-[10px] px-2 py-0.5 rounded-full uppercase">${tagText}</span>
-        </div>
-        <div>
-          <h4 class="font-bold text-sm text-white mb-1 line-clamp-1">${titleText}</h4>
-          <p class="text-xs text-zinc-400 mb-2">${meta}</p>
-          <p class="text-amber-400 font-black text-lg mb-3">${priceText}</p>
-          <button onclick="orderProduct('${titleText}', '${priceText}')" class="w-full py-2 rounded-lg text-xs font-bold bg-amber-500 text-zinc-950 hover:bg-amber-400 transition-colors cursor-pointer">${i18n[currentLang].orderBtn}</button>
-        </div>
-      </div>
-    `;
-  });
-}
-
-function renderProducts(filter = 'all') {
-  const grid = document.getElementById("product-grid");
-  if (!grid) return;
-  grid.innerHTML = "";
-
-  const items = filter === 'all' ? products : products.filter(p => p.category === filter);
-
-  items.forEach(product => {
-    const titleText = product.title[currentLang];
-    const tagText = product.tag[currentLang];
-    const priceText = formatPrice(product.priceCRC);
-    const meta = product.abv ? `${product.size} • Alc. ${product.abv}` : product.size;
-
-    grid.innerHTML += `
-      <div class="product-card bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden flex flex-col justify-between">
-        <div class="relative h-60 overflow-hidden bg-zinc-950 flex items-center justify-center">
-          <img src="${product.image}" alt="${titleText}" class="w-full h-full object-contain p-4 transition-transform duration-500 hover:scale-110" />
-          <span class="absolute top-4 left-4 bg-amber-500 text-zinc-950 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">${tagText}</span>
-        </div>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-          <div>
-            <h3 class="text-lg font-bold text-white mb-1">${titleText}</h3>
-            <p class="text-xs text-zinc-400 mb-4">${meta}</p>
+        grid.innerHTML += `
+          <div class="bg-zinc-900 border border-amber-500/20 rounded-xl overflow-hidden p-4 flex flex-col justify-between">
+            <div class="relative h-44 mb-3 overflow-hidden rounded-lg bg-zinc-950 flex items-center justify-center">
+              <img src="${item.image}" alt="${titleText}" class="w-full h-full object-contain p-2" />
+              <span class="absolute top-2 left-2 bg-amber-500 text-zinc-950 font-bold text-[10px] px-2 py-0.5 rounded-full uppercase">${tagText}</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-white mb-1 line-clamp-1">${titleText}</h4>
+              <p class="text-xs text-zinc-400 mb-2">${meta}</p>
+              <p class="text-amber-400 font-black text-lg mb-3">${priceText}</p>
+              <button onclick="orderProduct('${titleText}', '${priceText}')" class="w-full py-2 rounded-lg text-xs font-bold bg-amber-500 text-zinc-950 hover:bg-amber-400 transition-colors cursor-pointer">${i18n[currentLang].orderBtn}</button>
+            </div>
           </div>
-          <div>
-            <p class="text-amber-400 font-black text-xl mb-4">${priceText}</p>
-            <button onclick="orderProduct('${titleText}', '${priceText}')" class="w-full py-3 rounded-xl font-bold bg-amber-500 hover:bg-amber-400 text-zinc-950 transition-all flex items-center justify-center gap-2 cursor-pointer">
-              <span>${i18n[currentLang].orderBtn}</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </button>
+        `;
+      });
+    }
+
+    function renderProducts(filter = 'all') {
+      const grid = document.getElementById("product-grid");
+      if (!grid) return;
+      grid.innerHTML = "";
+
+      const items = filter === 'all' ? products : products.filter(p => p.category === filter);
+
+      items.forEach(product => {
+        const titleText = product.title[currentLang];
+        const tagText = product.tag[currentLang];
+        const priceText = formatPrice(product.priceCRC);
+        const meta = product.abv ? `${product.size} • Alc. ${product.abv}` : product.size;
+
+        grid.innerHTML += `
+          <div class="product-card bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden flex flex-col justify-between">
+            <div class="relative h-60 overflow-hidden bg-zinc-950 flex items-center justify-center">
+              <img src="${product.image}" alt="${titleText}" class="w-full h-full object-contain p-4 transition-transform duration-500 hover:scale-110" />
+              <span class="absolute top-4 left-4 bg-amber-500 text-zinc-950 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">${tagText}</span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow justify-between">
+              <div>
+                <h3 class="text-lg font-bold text-white mb-1">${titleText}</h3>
+                <p class="text-xs text-zinc-400 mb-4">${meta}</p>
+              </div>
+              <div>
+                <p class="text-amber-400 font-black text-xl mb-4">${priceText}</p>
+                <button onclick="orderProduct('${titleText}', '${priceText}')" class="w-full py-3 rounded-xl font-bold bg-amber-500 hover:bg-amber-400 text-zinc-950 transition-all flex items-center justify-center gap-2 cursor-pointer">
+                  <span>${i18n[currentLang].orderBtn}</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    `;
-  });
-}
-</script>
-
-<footer class="bg-zinc-950 border-t border-zinc-900 pt-12 pb-8 text-zinc-400">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- TOP FOOTER GRID: Location & Direct Contact -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 items-center">
-      
-      <!-- Contact & Info -->
-      <div class="space-y-4">
-        <h3 class="text-white text-xl font-bold tracking-tight">La Liko Store</h3>
-        <p class="text-sm text-zinc-400 max-w-md">
-          Servicio express de licores, bebidas, snacks y tabaco en Santa Ana y San José, Costa Rica.
-        </p>
-        
-        <!-- WhatsApp Direct Contact Button -->
-        <div class="pt-2">
-          <a 
-            href="https://wa.me/50670404610?text=Hola%20La%20Liko%20Store,%20me%20gustar%C3%ADa%20hacer%20un%20pedido" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all shadow-lg hover:shadow-emerald-500/20"
-          >
-            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-              <path d="M12.031 2c-5.516 0-9.999 4.483-9.999 9.999 0 2.12.662 4.083 1.789 5.701l-1.821 5.3 5.518-1.764c1.558.941 3.385 1.482 5.341 1.482 5.516 0 9.999-4.483 9.999-9.999 0-5.516-4.483-9.999-9.999-9.999zm0 18.22c-1.748 0-3.384-.482-4.789-1.314l-.343-.205-3.275 1.046 1.077-3.132-.224-.356c-.958-1.523-1.477-3.298-1.477-5.118 0-4.52 3.678-8.198 8.198-8.198 4.52 0 8.198 3.678 8.198 8.198 0 4.52-3.678 8.198-8.198 8.198z"/>
-            </svg>
-            <span>Pedir por WhatsApp: +506 7040 4610</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Google Maps Location Frame -->
-      <div class="w-full h-52 rounded-2xl overflow-hidden border border-zinc-800 shadow-xl bg-zinc-900">
-        <iframe 
-          title="Ubicación La Liko Store"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.012385172081!2d-84.1833!3d9.9333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e3223f13904d%3A0x88981ef6938992e1!2sSanta%20Ana%2C%20San%20Jos%C3%A9%2C%20Costa%20Rica!5e0!3m2!1ses!2scr!4v1710000000000!5m2!1ses!2scr" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-
-    </div>
-
-    <!-- BOTTOM COPYRIGHT & BRANDING LINK -->
-    <div class="border-t border-zinc-900 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
-      <p>© 2026 La Liko Store (Santa Ana). Todos los derechos reservados.</p>
-      
-      <!-- Auralinkdigital Branding Link -->
-      <p>
-        Powered and Engineered by 
-        <a 
-          href="https://auralinkdigital.com" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="text-amber-500 hover:text-amber-400 font-bold transition-colors underline underline-offset-4"
-        >
-          Auralinkdigital
-        </a>
-      </p>
-    </div>
-
-  </div>
-</footer>
+        `;
+      });
     }
 
     function setupToggles() {
       document.getElementById("toggle-lang").onclick = () => {
         currentLang = currentLang === 'es' ? 'en' : 'es';
-        document.getElementById("lang-label").textContent = currentLang === 'es' ? '🇲🇽 ES' : '🇺🇸 EN';
+        document.getElementById("lang-label").textContent = currentLang === 'es' ? 'MX ES' : 'US EN';
         updateTexts();
         renderFeatured();
         renderProducts(getActiveCategory());
@@ -482,7 +412,7 @@ function renderProducts(filter = 'all') {
       document.getElementById("nav-featured").textContent = t.navFeatured;
       document.getElementById("nav-catalog").textContent = t.navCatalog;
       document.getElementById("nav-cta").textContent = t.navCta;
-      document.getElementById("featured-title").innerHTML = `<i data-lucide="flame" class="text-amber-500 w-5 h-5"></i> ${t.featuredTitle}`;
+      document.getElementById("featured-title").innerHTML = t.featuredTitle;
       document.getElementById("catalog-title").textContent = t.catalogTitle;
       document.getElementById("catalog-subtitle").textContent = t.catalogSubtitle;
     }
@@ -510,5 +440,71 @@ function renderProducts(filter = 'all') {
       if (window.lucide) lucide.createIcons();
     });
   </script>
+
+  <footer class="bg-zinc-950 border-t border-zinc-900 pt-12 pb-8 text-zinc-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- TOP FOOTER GRID: Location & Direct Contact -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 items-center">
+        
+        <!-- Contact & Info -->
+        <div class="space-y-4">
+          <h3 class="text-white text-xl font-bold tracking-tight">La Liko Store</h3>
+          <p class="text-sm text-zinc-400 max-w-md">
+            Servicio express de licores, bebidas, snacks y tabaco en Santa Ana y San José, Costa Rica.
+          </p>
+          
+          <!-- WhatsApp Direct Contact Button -->
+          <div class="pt-2">
+            <a 
+              href="https://wa.me/50670404610?text=Hola%20La%20Liko%20Store,%20me%20gustar%C3%ADa%20hacer%20un%20pedido" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all shadow-lg hover:shadow-emerald-500/20"
+            >
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M12.031 2c-5.516 0-9.999 4.483-9.999 9.999 0 2.12.662 4.083 1.789 5.701l-1.821 5.3 5.518-1.764c1.558.941 3.385 1.482 5.341 1.482 5.516 0 9.999-4.483 9.999-9.999 0-5.516-4.483-9.999-9.999-9.999zm0 18.22c-1.748 0-3.384-.482-4.789-1.314l-.343-.205-3.275 1.046 1.077-3.132-.224-.356c-.958-1.523-1.477-3.298-1.477-5.118 0-4.52 3.678-8.198 8.198-8.198 4.52 0 8.198 3.678 8.198 8.198 0 4.52-3.678 8.198-8.198 8.198z"/>
+              </svg>
+              <span>Pedir por WhatsApp: +506 7040 4610</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Google Maps Location Frame -->
+        <div class="w-full h-52 rounded-2xl overflow-hidden border border-zinc-800 shadow-xl bg-zinc-900">
+          <iframe 
+            title="Ubicación La Liko Store"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.012385172081!2d-84.1833!3d9.9333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e3223f13904d%3A0x88981ef6938992e1!2sSanta%20Ana%2C%20San%20Jos%C3%A9%2C%20Costa%20Rica!5e0!3m2!1ses!2scr!4v1710000000000!5m2!1ses!2scr" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM COPYRIGHT & BRANDING LINK -->
+      <div class="border-t border-zinc-900 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
+        <p>© 2026 La Liko Store (Santa Ana). Todos los derechos reservados.</p>
+        
+        <!-- Auralinkdigital Branding Link -->
+        <p>
+          Powered and Engineered by 
+          <a 
+            href="https://auralinkdigital.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="text-amber-500 hover:text-amber-400 font-bold transition-colors underline underline-offset-4"
+          >
+            Auralinkdigital
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
 </body>
 </html>
