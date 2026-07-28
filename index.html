@@ -167,43 +167,7 @@
     };
 
     const products = [
-      // --- WINE & SANGRIA ---
-      { 
-        id: 1, 
-        title: { es: "Marqués de Cáceres Tinto Crianza Rioja", en: "Marqués de Cáceres Red Crianza Rioja" }, 
-        size: "750 ml", 
-        abv: "14%", 
-        category: "wine", 
-        priceCRC: 15840, 
-        featured: true, 
-        image: "./crianza-rioja-marques-de-caceres-botella.jpg", 
-        tag: { es: "Vino Tinto", en: "Red Wine" } 
-      },
-      { 
-        id: 2, 
-        title: { es: "Vino Rucio Sangría", en: "Vino Rucio Sangría" }, 
-        size: "1 L", 
-        abv: "7%", 
-        category: "wine", 
-        priceCRC: 4356, 
-        featured: false, 
-        image: "./vinosangria.png", 
-        tag: { es: "Sangría", en: "Sangria" } 
-      },
-
-      // --- TEQUILA & MEZCAL ---
-      { 
-        id: 7, 
-        title: { es: "Tequila Gran Malo Joven", en: "Gran Malo Joven Tequila" }, 
-        size: "750 ml", 
-        abv: "40%", 
-        category: "tequila", 
-        priceCRC: 26400, 
-        featured: true, 
-        image: "./granmalo.png", 
-        tag: { es: "Tequila", en: "Tequila" } 
-      },
-      { 
+  { 
     id: 11, 
     title: { es: "Don Julio Tequila Añejo", en: "Don Julio Añejo Tequila" }, 
     size: "750 ml", 
@@ -214,31 +178,29 @@
     image: "./donjulioanejo.png", 
     tag: { es: "Destacado", en: "Featured" } 
   },
-
-      // --- BEER ---
-      { 
-        id: 14, 
-        title: { es: "Imperial Cerveza Regular", en: "Imperial Regular Beer" }, 
-        size: "350 ml", 
-        abv: "4.5%", 
-        category: "beer", 
-        priceCRC: 11250, 
-        featured: true, 
-        image: "./imperial1.jpg", 
-        tag: { es: "Popular CR", en: "Top CR" } 
-      },
-      { 
-        id: 15, 
-        title: { es: "Heineken Cerveza Lager", en: "Heineken Lager Beer" }, 
-        size: "355 ml", 
-        abv: "5%", 
-        category: "beer", 
-        priceCRC: 1400, 
-        featured: false, 
-        image: "./hnk-original-bottle.png", 
-        tag: { es: "Importada", en: "Imported" } 
-      },
-{ 
+  { 
+    id: 14, 
+    title: { es: "Imperial Cerveza Regular", en: "Imperial Regular Beer" }, 
+    size: "350 ml", 
+    abv: "4.5%", 
+    category: "beer", 
+    priceCRC: 11250, 
+    featured: true, 
+    image: "./imperial1.jpg", 
+    tag: { es: "Popular CR", en: "Top CR" } 
+  },
+  { 
+    id: 15, 
+    title: { es: "Heineken Cerveza Lager", en: "Heineken Lager Beer" }, 
+    size: "355 ml", 
+    abv: "5%", 
+    category: "beer", 
+    priceCRC: 1400, 
+    featured: false, 
+    image: "./hnk-original-bottle.png", 
+    tag: { es: "Importada", en: "Imported" } 
+  },
+  { 
     id: 16, 
     title: { es: "Natural Light Cerveza 6 Pack", en: "Natural Light Beer 6 Pack" }, 
     size: "6 Pack (355 ml)", 
@@ -249,19 +211,18 @@
     image: "./natural.png", 
     tag: { es: "6 Pack", en: "6 Pack" } 
   },
-      // --- CHIPS & SNACKS ---
-      { 
-        id: 19, 
-        title: { es: "Pringles Original", en: "Pringles Original" }, 
-        size: "124 g", 
-        abv: "", 
-        category: "snacks", 
-        priceCRC: 2200, 
-        featured: true, 
-        image: "./pringlesoriginales.jpg", 
-        tag: { es: "Snack", en: "Snack" } 
-      },
-      { 
+  { 
+    id: 19, 
+    title: { es: "Pringles Original", en: "Pringles Original" }, 
+    size: "124 g", 
+    abv: "", 
+    category: "snacks", 
+    priceCRC: 2200, 
+    featured: true, 
+    image: "./pringlesoriginales.jpg", 
+    tag: { es: "Snack", en: "Snack" } 
+  },
+  { 
     id: 20, 
     title: { es: "Doritos Nacho Cheese", en: "Doritos Nacho Cheese" }, 
     size: "198 g", 
@@ -271,6 +232,17 @@
     featured: false, 
     image: "./doritos2.jpg", 
     tag: { es: "Chips", en: "Chips" } 
+  },
+  { 
+    id: 21, 
+    title: { es: "Red Bull Energy Drink", en: "Red Bull Energy Drink" }, 
+    size: "250 ml", 
+    abv: "", 
+    category: "drinks", 
+    priceCRC: 1600, 
+    featured: true, 
+    image: "./rb1.png", 
+    tag: { es: "Energética", en: "Energy Drink" } 
   },
   { 
     id: 25, 
@@ -304,20 +276,7 @@
     featured: false, 
     image: "./snack.png", 
     tag: { es: "Helado", en: "Ice Cream" } 
-  }
-];
-  { 
-    id: 27, 
-    title: { es: "Helado Dos Pinos Choco Snack", en: "Dos Pinos Choco Snack Bar" }, 
-    size: "1 un", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 1100, 
-    featured: false, 
-    image: "./snack.png",  
-  tag: { es: "Helado", en: "Ice Cream" } 
-}
-];
+  },
 
       // --- BEBIDAS & ENERGÉTICAS ---
      { 
