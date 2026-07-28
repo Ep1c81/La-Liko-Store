@@ -518,5 +518,28 @@
 
     </div>
   </footer>
-</body>
+  <script>
+  async function renderProducts() {
+    try {
+      const response = await fetch('./products.json');
+      const products = await response.json();
+      const grid = document.getElementById('featured-grid');
+
+      if (!grid) return;
+
+      grid.innerHTML = '';
+
+      products.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <img src="${product.image || 'https://via.placeholder.com/150'}" alt="${product.name || 'Product'}">
+          <h3>${product.name || 'Product Title'}</h3>
+          <p>${product.description || ''}</p>
+          <span class="price">${product.price ? '$' + product.price : ''}</span>
+        `;
+        grid.appendChild(card);
+      });
+} catch (e) { console.error(e); } renderProducts(); </script>
+</body>   
 </html>
