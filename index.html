@@ -540,6 +540,10 @@
         `;
         grid.appendChild(card);
       });
-} catch (e) { console.error(e); } renderProducts(); </script>
-</body>   
-</html>
+} catch (error) {
+      console.error('Error loading products:', error);
+    }
+  }
+
+  renderProducts();
+</script>
