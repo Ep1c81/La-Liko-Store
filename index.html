@@ -379,14 +379,16 @@
     featured: false,
     image: "./chipsandsnacks.png",
     tag: { es: "Snacks", en: "Snacks" }
-  }];
-    function formatPrice(priceCRC) {
-      if (currentCurrency === 'CRC') {
+}];
+
+function formatPrice(priceCRC) {
+    if (currentCurrency === 'CRC') {
         return `₡${priceCRC.toLocaleString()}`;
-      } else {
+    } else {
         return `$${(priceCRC / exchangeRate).toFixed(2)}`;
-      }
     }
+}
+
 function renderFeatured() {
       const grid = document.getElementById("featured-grid");
       if (!grid) return;
