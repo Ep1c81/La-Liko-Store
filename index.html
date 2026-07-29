@@ -370,7 +370,17 @@
         tag: { es: "Chicles", en: "Gum" } 
       }
     ];
-
+{
+    id: 101,
+    title: { es: "Chips & Snacks Variados", en: "Assorted Chips & Snacks" },
+    size: "Var",
+    abv: "0%",
+    category: "snacks",
+    priceCRC: 2000,
+    featured: false,
+    image: "./chipsandsnacks.png",
+    tag: { es: "Snacks", en: "Snacks" }
+  },
     function formatPrice(priceCRC) {
       if (currentCurrency === 'CRC') {
         return `₡${priceCRC.toLocaleString()}`;
