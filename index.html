@@ -467,9 +467,7 @@
         document.getElementById("curr-label").textContent = currentCurrency === 'CRC' ? '₡ CRC' : '$ USD';
         renderFeatured();
         renderProducts(getActiveCategory());
-      };
-    }
-
+      
     function getActiveCategory() {
       const activeBtn = document.querySelector(".filter-btn.active-filter");
       return activeBtn ? activeBtn.dataset.category : 'all';
