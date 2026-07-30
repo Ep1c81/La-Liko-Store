@@ -368,28 +368,18 @@
         featured: false, 
         image: "./trident1.jpeg", 
         tag: { es: "Chicles", en: "Gum" } 
-      },
-      {
-    id: 101,
-    title: { es: "Chips & Snacks Variados", en: "Assorted Chips & Snacks" },
-    size: "Var",
-    abv: "0%",
-    category: "snacks",
-    priceCRC: 2000,
-    featured: false,
-    image: "./chipsandsnacks.png",
-    tag: { es: "Snacks", en: "Snacks" }
-}];
+      }
+    ];
 
-function formatPrice(priceCRC) {
-    if (currentCurrency === 'CRC') {
+    function formatPrice(priceCRC) {
+      if (currentCurrency === 'CRC') {
         return `₡${priceCRC.toLocaleString()}`;
-    } else {
+      } else {
         return `$${(priceCRC / exchangeRate).toFixed(2)}`;
+      }
     }
-}
 
-function renderFeatured() {
+    function renderFeatured() {
       const grid = document.getElementById("featured-grid");
       if (!grid) return;
       grid.innerHTML = "";
@@ -468,7 +458,9 @@ function renderFeatured() {
         document.getElementById("curr-label").textContent = currentCurrency === 'CRC' ? '₡ CRC' : '$ USD';
         renderFeatured();
         renderProducts(getActiveCategory());
-      }
+      };
+    }
+
     function getActiveCategory() {
       const activeBtn = document.querySelector(".filter-btn.active-filter");
       return activeBtn ? activeBtn.dataset.category : 'all';
