@@ -4,23 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Primary Meta Tags -->
-<title>La Liko Store | Licores y Vinos en Santa Ana, Costa Rica</title>
-<meta name="title" content="La Liko Store | Licores y Vinos en Santa Ana, Costa Rica">
-<meta name="description" content="Tu tienda de licores, vinos y cerveza express en Santa Ana, Costa Rica. Realiza tu pedido rápido por WhatsApp con envío directo a domicilio.">
-<meta name="keywords" content="licorera santa ana, comprar guaro cacique, licores a domicilio costa rica, cerveza express santa ana, la liko store">
-<meta name="robots" content="index, follow">
-<!-- Open Graph / Facebook / WhatsApp Preview -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://la-liko-store.vercel.app/">
-<meta property="og:title" content="La Liko Store | Licores & Express en Santa Ana">
-<meta property="og:description" content="Pedí tus licores y bebidas favoritas por WhatsApp con entrega rápida en Santa Ana.">
-<meta property="og:image" content="https://la-liko-store.vercel.app/guaroron.png">
+  <title>La Liko Store | Licores y Vinos en Santa Ana, Costa Rica</title>
+  <meta name="title" content="La Liko Store | Licores y Vinos en Santa Ana, Costa Rica">
+  <meta name="description" content="Tu tienda de licores, vinos y cerveza express en Santa Ana, Costa Rica. Realiza tu pedido rápido por WhatsApp con envío directo a domicilio.">
+  <meta name="keywords" content="licorera santa ana, comprar guaro cacique, licores a domicilio costa rica, cerveza express santa ana, la liko store">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook / WhatsApp Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://la-liko-store.vercel.app/">
+  <meta property="og:title" content="La Liko Store | Licores & Express en Santa Ana">
+  <meta property="og:description" content="Pedí tus licores y bebidas favoritas por WhatsApp con entrega rápida en Santa Ana.">
+  <meta property="og:image" content="https://la-liko-store.vercel.app/guaroron.png">
 
-<!-- Local SEO / Geo Tags -->
-<meta name="geo.region" content="CR-SJ">
-<meta name="geo.placename" content="Santa Ana">
-<meta name="geo.position" content="9.9326;-84.1826">
-<meta name="ICBM" content="9.9326, -84.1826">
+  <!-- Local SEO / Geo Tags -->
+  <meta name="geo.region" content="CR-SJ">
+  <meta name="geo.placename" content="Santa Ana">
+  <meta name="geo.position" content="9.9326;-84.1826">
+  <meta name="ICBM" content="9.9326, -84.1826">
+  
   <!-- Tailwind CSS & Lucide Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -52,8 +54,13 @@
 </head>
 <body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-amber-500 selection:text-black">
 
+  <!-- NFC Review Retention Banner (Hidden by default) -->
+  <div id="review-banner" class="hidden fixed top-0 left-0 right-0 z-[60] bg-emerald-500 text-zinc-950 font-bold text-center py-2 text-xs md:text-sm shadow-md">
+    ¡Gracias por tu reseña! Usa el código <span class="bg-zinc-950 text-emerald-400 px-2 py-0.5 rounded ml-1">LIKO10</span> para un 10% de descuento en tu orden de hoy.
+  </div>
+
   <!-- Header & Navigation -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/60">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/60 mt-0" id="main-header">
     <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between gap-4">
       
       <!-- Brand Logo -->
@@ -85,59 +92,41 @@
     </div>
   </header>
 
-<!-- Hero Section -->
-<section class="relative pt-36 pb-12 md:pt-44 md:pb-16 overflow-hidden">
-  <!-- Hero Content -->
-  <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
-    <span id="hero-badge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-amber-500/10 text-amber-400 border border-amber-500/20">
-  <i data-lucide="sparkles" class="w-4 h-4"></i> Express Santa Ana y Alrededores
-</span>
-    <div class="inline-flex items-center gap-2 px-3 py-1 text-xs text-amber-300/90 bg-zinc-900/80 rounded-full border border-zinc-800 mt-3">
-  <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-500"></i>
-  <span>Lunes a Domingo: 12:00 PM – 12:00 AM</span>
-</div>
-    <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mt-6 mb-4">
-      Entrega Rápida a Tu Puerta.
-    </h1>
-    <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-      Tu licorera express en Santa Ana. Servicio rápido a domicilio de vinos, cervezas frías, snacks y destilados.
-    </p>
-  </div>
-   </section>
-      <section id="featured" class="py-8 bg-zinc-950 border-t border-zinc-800/40">
-        <div class="max-w-7xl mx-auto px-6">
-      <h2 id="featured-title" class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-    <!-- WhatsApp Ordering Banner -->
-<div class="mb-8 rounded-2xl bg-stone-900/90 border border-stone-800 p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
-  <!-- Left Side: Icon + Text -->
-  <div class="flex items-center gap-4">
-    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
-      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-      </svg>
+  <!-- Hero Section -->
+  <section class="relative pt-36 pb-12 md:pt-44 md:pb-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+      <span id="hero-badge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-amber-500/10 text-amber-400 border border-amber-500/20">
+        <i data-lucide="sparkles" class="w-4 h-4"></i> Express Santa Ana y Alrededores
+      </span>
+      <div class="inline-flex items-center gap-2 px-3 py-1 text-xs text-amber-300/90 bg-zinc-900/80 rounded-full border border-zinc-800 mt-3">
+        <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-500"></i>
+        <span>Lunes a Domingo: 12:00 PM – 12:00 AM</span>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mt-6 mb-4">
+        Entrega Rápida a Tu Puerta.
+      </h1>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+        Tu licorera express en Santa Ana. Servicio rápido a domicilio de vinos, cervezas frías, snacks y destilados.
+      </p>
+      
+      <!-- Unified Hero CTA -->
+      <a href="#" id="hero-wa-btn" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-stone-950 font-bold text-lg transition-all shadow-lg hover:shadow-emerald-500/20">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.999 4.483-9.999 9.999 0 2.12.662 4.083 1.789 5.701l-1.821 5.3 5.518-1.764c1.558.941 3.385 1.482 5.341 1.482 5.516 0 9.999-4.483 9.999-9.999 0-5.516-4.483-9.999-9.999-9.999zm0 18.22c-1.748 0-3.384-.482-4.789-1.314l-.343-.205-3.275 1.046 1.077-3.132-.224-.356c-.958-1.523-1.477-3.298-1.477-5.118 0-4.52 3.678-8.198 8.198-8.198 4.52 0 8.198 3.678 8.198 8.198 0 4.52-3.678 8.198-8.198 8.198z"/></svg>
+        <span id="hero-wa-text">Pedir por WhatsApp</span>
+      </a>
     </div>
-    <div>
-      <h3 class="text-stone-100 font-bold text-base md:text-lg">¿Listo para ordenar?</h3>
-      <p class="text-stone-400 text-xs md:text-sm">Tomamos tu pedido directamente por WhatsApp para un envío express.</p>
-    </div>
-  </div>
+  </section>
 
-  <!-- Right Side: Button -->
-  <a href="https://wa.me/50670404610?text=Hola!%20Quiero%20hacer%20un%20pedido" 
-     target="_blank" 
-     rel="noopener noreferrer" 
-     class="w-full md:w-auto px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-stone-950 font-bold text-sm transition-all flex items-center justify-center gap-2 shrink-0">
-    <span>Pedir por WhatsApp</span>
-  </a>
-</div>
-  </a>
-</div>
-</div>
-  </div>
-  <div id="featured-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
-  <div id="featured-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
-</div>
-        </section>
+  <!-- Featured Section -->
+  <section id="featured" class="py-12 bg-zinc-950 border-t border-zinc-800/40">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 id="featured-title" class="text-2xl font-bold text-white mb-8 flex items-center gap-2">
+        Lo Más Pedido en <span class='text-amber-500'>Santa Ana</span>
+      </h2>
+      <div id="featured-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </div>
+  </section>
+
   <!-- Full Catalog Section -->
   <section id="catalog" class="py-16 bg-zinc-900/40 border-t border-zinc-800/50">
     <div class="max-w-7xl mx-auto px-6">
@@ -164,9 +153,39 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="py-10 border-t border-zinc-800 bg-zinc-950 text-center text-zinc-500 text-sm">
-    <p>&copy; 2026 La Liko Store (Santa Ana). Todos los derechos reservados.</p>
+  <!-- Map & Contact Footer -->
+  <footer class="bg-zinc-950 border-t border-zinc-900 pt-12 pb-8 text-zinc-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 items-center">
+        <!-- Contact & Info -->
+        <div class="space-y-4">
+          <h3 class="text-white text-xl font-bold tracking-tight">La Liko Store</h3>
+          <p class="text-sm text-zinc-400 max-w-md">
+            Servicio express de licores, bebidas, snacks y tabaco en Santa Ana y San José, Costa Rica.
+          </p>
+          <div class="pt-2">
+            <a href="https://wa.me/50670404610?text=Hola%20La%20Liko%20Store,%20me%20gustar%C3%ADa%20hacer%20un%20pedido" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all shadow-lg hover:shadow-emerald-500/20">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.999 4.483-9.999 9.999 0 2.12.662 4.083 1.789 5.701l-1.821 5.3 5.518-1.764c1.558.941 3.385 1.482 5.341 1.482 5.516 0 9.999-4.483 9.999-9.999 0-5.516-4.483-9.999-9.999-9.999zm0 18.22c-1.748 0-3.384-.482-4.789-1.314l-.343-.205-3.275 1.046 1.077-3.132-.224-.356c-.958-1.523-1.477-3.298-1.477-5.118 0-4.52 3.678-8.198 8.198-8.198 4.52 0 8.198 3.678 8.198 8.198 0 4.52-3.678 8.198-8.198 8.198z"/></svg>
+              <span>Pedir por WhatsApp: +506 7040 4610</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Google Maps Location Frame -->
+        <div class="w-full h-52 rounded-2xl overflow-hidden border border-zinc-800 shadow-xl bg-zinc-900">
+          <iframe title="Ubicación La Liko Store" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.012385172081!2d-84.1833!3d9.9333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e3223f13904d%3A0x88981ef6938992e1!2sSanta%20Ana%2C%20San%20Jos%C3%A9%2C%20Costa%20Rica!5e0!3m2!1ses!2scr!4v1710000000000!5m2!1ses!2scr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <!-- Branding -->
+      <div class="border-t border-zinc-900 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
+        <p>© 2026 La Liko Store (Santa Ana). Todos los derechos reservados.</p>
+        <p>
+          Powered and Engineered by 
+          <a href="https://auralinkdigital.com" target="_blank" rel="noopener noreferrer" class="text-amber-500 hover:text-amber-400 font-bold transition-colors underline underline-offset-4">Auralinkdigital</a>
+        </p>
+      </div>
+    </div>
   </footer>
 
   <!-- Script Logic -->
@@ -175,6 +194,9 @@
     const exchangeRate = 515;
     let currentLang = 'es';
     let currentCurrency = 'CRC';
+    
+    // REPLACE THIS WITH THE REAL GOOGLE REVIEW LINK
+    const GOOGLE_REVIEW_LINK = "https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review";
 
     const i18n = {
       es: {
@@ -185,6 +207,7 @@
         catalogTitle: "Catálogo Completo",
         catalogSubtitle: "Precios oficiales de La Liko Store con envío express.",
         orderBtn: "Pedir por WhatsApp",
+        heroWaBtn: "Pedir por WhatsApp",
         waMsg: "Hola La Liko Store, me gustaría ordenar:"
       },
       en: {
@@ -195,188 +218,50 @@
         catalogTitle: "Full Catalog",
         catalogSubtitle: "Official prices with express delivery in Santa Ana & San José.",
         orderBtn: "Order via WhatsApp",
+        heroWaBtn: "Order via WhatsApp",
         waMsg: "Hello La Liko Store, I would like to order:"
       }
     };
 
     const products = [
-  { 
-    id: 11, 
-    title: { es: "Don Julio Tequila Añejo", en: "Don Julio Añejo Tequila" }, 
-    size: "750 ml", 
-    abv: "38%", 
-    category: "tequila", 
-    priceCRC: 22440, 
-    featured: true, 
-    image: "./donjulioanejo.png", 
-    tag: { es: "Destacado", en: "Featured" } 
-  },
-  { 
-    id: 14, 
-    title: { es: "Imperial Cerveza Regular", en: "Imperial Regular Beer" }, 
-    size: "350 ml", 
-    abv: "4.5%", 
-    category: "beer", 
-    priceCRC: 11250, 
-    featured: true, 
-    image: "./imperial1.jpg", 
-    tag: { es: "Popular CR", en: "Top CR" } 
-  },
-  { 
-    id: 99,
-    title: { es: "Vino Selección Especial", en: "Special Selection Wine" },
-    size: "750 ml",
-    abv: "13.5%",
-    category: "wine",
-    priceCRC: 8000,
-    featured: true,
-    image: "./photosforyou-wine-1842946.jpg",
-    tag: { es: "Selección", en: "Selection" }
-  },
-      {
-    id: 15, 
-    title: { es: "Heineken Cerveza Lager", en: "Heineken Lager Beer" }, 
-    size: "355 ml", 
-    abv: "5%", 
-    category: "beer", 
-    priceCRC: 1400, 
-    featured: false, 
-    image: "./hnk-original-bottle.png", 
-    tag: { es: "Importada", en: "Imported" } 
-  },
-  { 
-    id: 16, 
-    title: { es: "Natural Light Cerveza 6 Pack", en: "Natural Light Beer 6 Pack" }, 
-    size: "6 Pack (355 ml)", 
-    abv: "4.2%", 
-    category: "beer", 
-    priceCRC: 4500, 
-    featured: false, 
-    image: "./natural.png", 
-    tag: { es: "6 Pack", en: "6 Pack" } 
-  },
-  { 
-    id: 19, 
-    title: { es: "Pringles Original", en: "Pringles Original" }, 
-    size: "124 g", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 2200, 
-    featured: true, 
-    image: "./pringlesoriginales.jpg", 
-    tag: { es: "Snack", en: "Snack" } 
-  },
-  { 
-    id: 20, 
-    title: { es: "Doritos Nacho Cheese", en: "Doritos Nacho Cheese" }, 
-    size: "198 g", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 1850, 
-    featured: false, 
-    image: "./doritos2.jpg", 
-    tag: { es: "Chips", en: "Chips" } 
-  },
-  { 
-    id: 21, 
-    title: { es: "Red Bull Energy Drink", en: "Red Bull Energy Drink" }, 
-    size: "250 ml", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 1600, 
-    featured: true, 
-    image: "./rb1.png", 
-    tag: { es: "Energética", en: "Energy Drink" } 
-  },
-  { 
-    id: 25, 
-    title: { es: "Helado Dos Pinos Krunchy Vaso", en: "Dos Pinos Krunchy Ice Cream Tub" }, 
-    size: "500 g", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 2800, 
-    featured: true, 
-    image: "./krunchy.png", 
-    tag: { es: "Helado", en: "Ice Cream" } 
-  },
-  { 
-    id: 26, 
-    title: { es: "Helados Dos Pinos Variados", en: "Dos Pinos Ice Cream Novelties" }, 
-    size: "1 un", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 1200, 
-    featured: false, 
-    image: "./paletas.png", 
-    tag: { es: "Helado", en: "Ice Cream" } 
-  },
-  { 
-    id: 27, 
-    title: { es: "Helado Dos Pinos Choco Snack", en: "Dos Pinos Choco Snack Bar" }, 
-    size: "1 un", 
-    abv: "", 
-    category: "snacks", 
-    priceCRC: 1100, 
-    featured: false, 
-    image: "./snack.png", 
-    tag: { es: "Helado", en: "Ice Cream" } 
-  },
-
-      // --- BEBIDAS & ENERGÉTICAS ---
-     { 
-    id: 28, 
-    title: { es: "Monster Energy Drink Sabor Variado", en: "Monster Energy Drink Flavors" }, 
-    size: "473 ml", 
-    abv: "", 
-    category: "drinks", 
-    priceCRC: 1800, 
-    featured: true, 
-    image: "./monsterenergy.png", 
-    tag: { es: "Energética", en: "Energy Drink" } 
-  },
-      { 
-        id: 22, 
-        title: { es: "Coca-Cola Sabor Original", en: "Coca-Cola Original" }, 
-        size: "600 ml", 
-        abv: "", 
-        category: "drinks", 
-        priceCRC: 1100, 
-        featured: false, 
-        image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop", 
-        tag: { es: "Refresco", en: "Soda" } 
-      },
-
-      // --- CIGARRILLOS & DULCES ---
-      { 
-        id: 23, 
-        title: { es: "Marlboro Red Cajetilla", en: "Marlboro Red Pack" }, 
-        size: "20 cigarrillos", 
-        abv: "", 
-        category: "extras", 
-        priceCRC: 2700, 
-        featured: false, 
-        image: "./Marlboro Red.png", 
-        tag: { es: "Tabaco", en: "Tobacco" } 
-      },
-      { 
-        id: 24, 
-        title: { es: "Chicles Trident Menta", en: "Trident Spearmint Gum" }, 
-        size: "Pack 14 pcs", 
-        abv: "", 
-        category: "extras", 
-        priceCRC: 850, 
-        featured: false, 
-        image: "./trident1.jpeg", 
-        tag: { es: "Chicles", en: "Gum" } 
-      }
+      { id: 11, title: { es: "Don Julio Tequila Añejo", en: "Don Julio Añejo Tequila" }, size: "750 ml", abv: "38%", category: "tequila", priceCRC: 22440, featured: true, image: "./donjulioanejo.png", tag: { es: "Destacado", en: "Featured" } },
+      { id: 14, title: { es: "Imperial Cerveza Regular", en: "Imperial Regular Beer" }, size: "350 ml", abv: "4.5%", category: "beer", priceCRC: 11250, featured: true, image: "./imperial1.jpg", tag: { es: "Popular CR", en: "Top CR" } },
+      { id: 99, title: { es: "Vino Selección Especial", en: "Special Selection Wine" }, size: "750 ml", abv: "13.5%", category: "wine", priceCRC: 8000, featured: true, image: "./photosforyou-wine-1842946.jpg", tag: { es: "Selección", en: "Selection" } },
+      { id: 15, title: { es: "Heineken Cerveza Lager", en: "Heineken Lager Beer" }, size: "355 ml", abv: "5%", category: "beer", priceCRC: 1400, featured: false, image: "./hnk-original-bottle.png", tag: { es: "Importada", en: "Imported" } },
+      { id: 16, title: { es: "Natural Light Cerveza 6 Pack", en: "Natural Light Beer 6 Pack" }, size: "6 Pack (355 ml)", abv: "4.2%", category: "beer", priceCRC: 4500, featured: false, image: "./natural.png", tag: { es: "6 Pack", en: "6 Pack" } },
+      { id: 19, title: { es: "Pringles Original", en: "Pringles Original" }, size: "124 g", abv: "", category: "snacks", priceCRC: 2200, featured: true, image: "./pringlesoriginales.jpg", tag: { es: "Snack", en: "Snack" } },
+      { id: 20, title: { es: "Doritos Nacho Cheese", en: "Doritos Nacho Cheese" }, size: "198 g", abv: "", category: "snacks", priceCRC: 1850, featured: false, image: "./doritos2.jpg", tag: { es: "Chips", en: "Chips" } },
+      { id: 21, title: { es: "Red Bull Energy Drink", en: "Red Bull Energy Drink" }, size: "250 ml", abv: "", category: "drinks", priceCRC: 1600, featured: true, image: "./rb1.png", tag: { es: "Energética", en: "Energy Drink" } },
+      { id: 25, title: { es: "Helado Dos Pinos Krunchy Vaso", en: "Dos Pinos Krunchy Ice Cream Tub" }, size: "500 g", abv: "", category: "snacks", priceCRC: 2800, featured: true, image: "./krunchy.png", tag: { es: "Helado", en: "Ice Cream" } },
+      { id: 26, title: { es: "Helados Dos Pinos Variados", en: "Dos Pinos Ice Cream Novelties" }, size: "1 un", abv: "", category: "snacks", priceCRC: 1200, featured: false, image: "./paletas.png", tag: { es: "Helado", en: "Ice Cream" } },
+      { id: 27, title: { es: "Helado Dos Pinos Choco Snack", en: "Dos Pinos Choco Snack Bar" }, size: "1 un", abv: "", category: "snacks", priceCRC: 1100, featured: false, image: "./snack.png", tag: { es: "Helado", en: "Ice Cream" } },
+      { id: 28, title: { es: "Monster Energy Drink Sabor Variado", en: "Monster Energy Drink Flavors" }, size: "473 ml", abv: "", category: "drinks", priceCRC: 1800, featured: true, image: "./monsterenergy.png", tag: { es: "Energética", en: "Energy Drink" } },
+      { id: 22, title: { es: "Coca-Cola Sabor Original", en: "Coca-Cola Original" }, size: "600 ml", abv: "", category: "drinks", priceCRC: 1100, featured: false, image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop", tag: { es: "Refresco", en: "Soda" } },
+      { id: 23, title: { es: "Marlboro Red Cajetilla", en: "Marlboro Red Pack" }, size: "20 cigarrillos", abv: "", category: "extras", priceCRC: 2700, featured: false, image: "./Marlboro Red.png", tag: { es: "Tabaco", en: "Tobacco" } },
+      { id: 24, title: { es: "Chicles Trident Menta", en: "Trident Spearmint Gum" }, size: "Pack 14 pcs", abv: "", category: "extras", priceCRC: 850, featured: false, image: "./trident1.jpeg", tag: { es: "Chicles", en: "Gum" } }
     ];
 
-    function formatPrice(priceCRC) {
-      if (currentCurrency === 'CRC') {
-        return `₡${priceCRC.toLocaleString()}`;
-      } else {
-        return `$${(priceCRC / exchangeRate).toFixed(2)}`;
+    function handleNFCRedirect() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('rate') === 'true') {
+        localStorage.setItem('laliko_reviewed', 'true');
+        window.location.href = GOOGLE_REVIEW_LINK;
       }
+      
+      if (localStorage.getItem('laliko_reviewed') === 'true') {
+        const banner = document.getElementById('review-banner');
+        const header = document.getElementById('main-header');
+        if (banner && header) {
+          banner.classList.remove('hidden');
+          header.classList.add('mt-8');
+        }
+      }
+    }
+
+    function formatPrice(priceCRC) {
+      return currentCurrency === 'CRC' 
+        ? `₡${priceCRC.toLocaleString()}` 
+        : `$${(priceCRC / exchangeRate).toFixed(2)}`;
     }
 
     function renderFeatured() {
@@ -393,7 +278,7 @@
         grid.innerHTML += `
           <div class="bg-zinc-900 border border-amber-500/20 rounded-xl overflow-hidden p-4 flex flex-col justify-between">
             <div class="relative h-44 mb-3 overflow-hidden rounded-lg bg-zinc-950 flex items-center justify-center">
-              <img src="${item.image}" alt="${titleText}" class="w-full h-full object-contain p-2" />
+              <img src="${item.image}" alt="${titleText}" class="w-full h-full object-contain p-2" loading="lazy" />
               <span class="absolute top-2 left-2 bg-amber-500 text-zinc-950 font-bold text-[10px] px-2 py-0.5 rounded-full uppercase">${tagText}</span>
             </div>
             <div>
@@ -423,7 +308,7 @@
         grid.innerHTML += `
           <div class="product-card bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden flex flex-col justify-between">
             <div class="relative h-60 overflow-hidden bg-zinc-950 flex items-center justify-center">
-              <img src="${product.image}" alt="${titleText}" class="w-full h-full object-contain p-4 transition-transform duration-500 hover:scale-110" />
+              <img src="${product.image}" alt="${titleText}" class="w-full h-full object-contain p-4 transition-transform duration-500 hover:scale-110" loading="lazy" />
               <span class="absolute top-4 left-4 bg-amber-500 text-zinc-950 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">${tagText}</span>
             </div>
             <div class="p-6 flex flex-col flex-grow justify-between">
@@ -447,7 +332,7 @@
     function setupToggles() {
       document.getElementById("toggle-lang").onclick = () => {
         currentLang = currentLang === 'es' ? 'en' : 'es';
-        document.getElementById("lang-label").textContent = currentLang === 'es' ? 'MX ES' : 'US EN';
+        document.getElementById("lang-label").textContent = currentLang === 'es' ? '🇲🇽 ES' : '🇺🇸 EN';
         updateTexts();
         renderFeatured();
         renderProducts(getActiveCategory());
@@ -458,6 +343,12 @@
         document.getElementById("curr-label").textContent = currentCurrency === 'CRC' ? '₡ CRC' : '$ USD';
         renderFeatured();
         renderProducts(getActiveCategory());
+      };
+
+      document.getElementById("hero-wa-btn").onclick = (e) => {
+        e.preventDefault();
+        const msg = encodeURIComponent(i18n[currentLang].waMsg);
+        window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${msg}`, '_blank');
       };
     }
 
@@ -474,6 +365,7 @@
       document.getElementById("featured-title").innerHTML = t.featuredTitle;
       document.getElementById("catalog-title").textContent = t.catalogTitle;
       document.getElementById("catalog-subtitle").textContent = t.catalogSubtitle;
+      document.getElementById("hero-wa-text").textContent = t.heroWaBtn;
     }
 
     function setupFilters() {
@@ -492,6 +384,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
+      handleNFCRedirect();
       setupToggles();
       setupFilters();
       renderFeatured();
@@ -499,71 +392,5 @@
       if (window.lucide) lucide.createIcons();
     });
   </script>
-
-  <footer class="bg-zinc-950 border-t border-zinc-900 pt-12 pb-8 text-zinc-400">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- TOP FOOTER GRID: Location & Direct Contact -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 items-center">
-        
-        <!-- Contact & Info -->
-        <div class="space-y-4">
-          <h3 class="text-white text-xl font-bold tracking-tight">La Liko Store</h3>
-          <p class="text-sm text-zinc-400 max-w-md">
-            Servicio express de licores, bebidas, snacks y tabaco en Santa Ana y San José, Costa Rica.
-          </p>
-          
-          <!-- WhatsApp Direct Contact Button -->
-          <div class="pt-2">
-            <a 
-              href="https://wa.me/50670404610?text=Hola%20La%20Liko%20Store,%20me%20gustar%C3%ADa%20hacer%20un%20pedido" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all shadow-lg hover:shadow-emerald-500/20"
-            >
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M12.031 2c-5.516 0-9.999 4.483-9.999 9.999 0 2.12.662 4.083 1.789 5.701l-1.821 5.3 5.518-1.764c1.558.941 3.385 1.482 5.341 1.482 5.516 0 9.999-4.483 9.999-9.999 0-5.516-4.483-9.999-9.999-9.999zm0 18.22c-1.748 0-3.384-.482-4.789-1.314l-.343-.205-3.275 1.046 1.077-3.132-.224-.356c-.958-1.523-1.477-3.298-1.477-5.118 0-4.52 3.678-8.198 8.198-8.198 4.52 0 8.198 3.678 8.198 8.198 0 4.52-3.678 8.198-8.198 8.198z"/>
-              </svg>
-              <span>Pedir por WhatsApp: +506 7040 4610</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Google Maps Location Frame -->
-        <div class="w-full h-52 rounded-2xl overflow-hidden border border-zinc-800 shadow-xl bg-zinc-900">
-          <iframe 
-            title="Ubicación La Liko Store"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.012385172081!2d-84.1833!3d9.9333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e3223f13904d%3A0x88981ef6938992e1!2sSanta%20Ana%2C%20San%20Jos%C3%A9%2C%20Costa%20Rica!5e0!3m2!1ses!2scr!4v1710000000000!5m2!1ses!2scr" 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-
-      </div>
-
-      <!-- BOTTOM COPYRIGHT & BRANDING LINK -->
-      <div class="border-t border-zinc-900 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
-        <p>© 2026 La Liko Store (Santa Ana). Todos los derechos reservados.</p>
-        
-        <!-- Auralinkdigital Branding Link -->
-        <p>
-          Powered and Engineered by 
-          <a 
-            href="https://auralinkdigital.com" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="text-amber-500 hover:text-amber-400 font-bold transition-colors underline underline-offset-4"
-          >
-            Auralinkdigital
-          </a>
-        </p>
-      </div>
-
-    </div>
-  </footer>
 </body>
 </html>
