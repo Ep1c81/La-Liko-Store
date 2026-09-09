@@ -12,42 +12,51 @@
     <!-- Hero / Main Header -->
     <header class="text-center py-8 px-4">
         <h1 class="text-4xl font-extrabold tracking-tight text-white mb-2">La Liko Store</h1>
-        <p class="text-gray-400 text-sm md:text-base">Entrega Rápida a Tu Puerta en Santa Ana</p>
+        <p class="text-gray-400 text-sm md:text-base">Servicio express de licores, bebidas, snacks y tabaco en Santa Ana y San José, Costa Rica.</p>
     </header>
 
     <!-- Main Content Area -->
-    <main class="flex-grow flex flex-col items-center justify-center w-full max-w-lg mx-auto px-4 space-y-6">
+    <main class="flex-grow flex flex-col items-center justify-center w-full max-w-4xl mx-auto px-4 space-y-6">
         
-        <!-- Action Card / Store Info & Map Embed Solution -->
-        <div class="bg-gray-800 bg-opacity-50 backdrop-blur-md border border-gray-700 p-6 rounded-2xl w-full shadow-xl space-y-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-4">
-                    <div class="bg-blue-600 p-3 rounded-full text-white shadow-md">
-                        <i class="fa-solid fa-map-location-dot text-xl"></i>
-                    </div>
-                    <div class="text-left">
-                        <h4 class="font-bold text-base text-white">La Liko Store</h4>
-                        <p class="text-xs text-gray-400">Santa Ana, San José</p>
-                    </div>
+        <!-- Store Info & Interactive Map Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+            
+            <!-- Left Info Card -->
+            <div class="bg-gray-800 bg-opacity-50 backdrop-blur-md border border-gray-700 p-6 rounded-2xl shadow-xl flex flex-col justify-between">
+                <div>
+                    <h4 class="font-bold text-xl text-white mb-2">La Liko Store</h4>
+                    <p class="text-xs text-gray-400 mb-4">Santa Ana, San José</p>
                 </div>
-                <!-- DIRECT NAVIGATION PIN FALLBACK -->
-                <a href="https://maps.google.com/?q=La+Liko+Store+Santa+Ana" target="_blank" rel="noopener noreferrer" class="bg-white text-black text-sm font-bold py-2 px-3 rounded-xl hover:bg-gray-200 transition shadow-lg flex items-center">
-                    Abrir <i class="fa-solid fa-arrow-up-right-from-square ml-1.5 text-xs"></i>
+                <a href="https://wa.me/50670404610" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-xl transition shadow-lg flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Pedir por WhatsApp: +506 7040 4610</span>
                 </a>
             </div>
 
-            <!-- Bulletproof Embedded Map Frame targeting exact coordinates so it never defaults to town center -->
-            <div class="w-full h-48 rounded-xl overflow-hidden border border-gray-700 relative">
-                <iframe 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                    src="https://maps.google.com/maps?q=9.9298584,-84.1806162&z=17&output=embed">
-                ></iframe>
+            <!-- Right Map Widget Card (Fully Wrapped with Place ID) -->
+            <div class="bg-gray-800 bg-opacity-50 backdrop-blur-md border border-gray-700 p-4 rounded-2xl shadow-xl relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute top-4 left-4 z-10">
+                    <!-- Direct Place ID Button -->
+                    <a href="https://www.google.com/maps/place/?q=place_id:ChIJp_9SBQD9oI8Rgnn7xZWl5f8" target="_blank" rel="noopener noreferrer" class="bg-white text-black text-xs font-bold py-2 px-3 rounded-lg hover:bg-gray-200 transition shadow-md flex items-center space-x-1">
+                        <span>Abrir en Maps</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Interactive Map Frame wrapped or loaded with exact Place ID query -->
+                <div class="w-full h-48 rounded-xl overflow-hidden border border-gray-700 relative">
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://maps.google.com/maps?q=place_id:ChIJp_9SBQD9oI8Rgnn7xZWl5f8&output=embed">
+                    </iframe>
+                </div>
             </div>
+
         </div>
 
     </main>
@@ -55,7 +64,7 @@
     <!-- Footer -->
     <footer class="text-center py-6 border-t border-gray-800 mt-8">
         <p class="text-xs text-gray-500">
-            Powered and Engineered by <a href="https://auralinkdigital.com" target="_blank" class="font-bold text-yellow-500 hover:text-yellow-400 transition">Auralinkdigital</a>
+            © 2026 La Liko Store (Santa Ana). Todos los derechos reservados. | Powered and Engineered by <a href="https://auralinkdigital.com" target="_blank" class="font-bold text-yellow-500 hover:text-yellow-400 transition">Auralinkdigital</a>
         </p>
     </footer>
 
