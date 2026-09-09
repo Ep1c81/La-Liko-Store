@@ -3,94 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Liko Store | VIP Pass</title>
+    <title>La Liko Store | Express Santa Ana</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        /* Auralinkdigital Premium Glassmorphism Theme */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-    </style>
 </head>
-<body class="bg-gray-900 text-white font-sans antialiased min-h-screen flex flex-col justify-between p-4">
+<body class="bg-gray-900 text-white font-sans antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- Header Section -->
-    <header class="text-center py-6">
-        <h1 class="text-3xl font-bold tracking-tight text-white">La Liko Store</h1>
-        <p class="text-gray-400 mt-2 text-sm">Tu experiencia es nuestra prioridad</p>
+    <!-- Hero / Main Header -->
+    <header class="text-center py-8 px-4">
+        <h1 class="text-4xl font-extrabold tracking-tight text-white mb-2">La Liko Store</h1>
+        <p class="text-gray-400 text-sm md:text-base">Entrega Rápida a Tu Puerta en Santa Ana</p>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow flex flex-col items-center justify-center w-full max-w-md mx-auto space-y-6">
+    <!-- Main Content Area -->
+    <main class="flex-grow flex flex-col items-center justify-center w-full max-w-lg mx-auto px-4 space-y-6">
         
-        <!-- Reputation Management: Review Shield Section -->
-        <div id="review-shield" class="glass-panel p-6 rounded-2xl w-full shadow-lg text-center">
-            <h2 class="text-xl font-semibold mb-4">¿Cómo calificarías tu experiencia hoy?</h2>
-            
-            <div class="flex justify-center space-x-2 mb-6 text-4xl">
-                <!-- Intercept: 1 to 3 Stars triggers private Formspree feedback -->
-                <button onclick="showFeedbackForm()" class="text-gray-500 hover:text-yellow-400 transition focus:outline-none">&#9733;</button>
-                <button onclick="showFeedbackForm()" class="text-gray-500 hover:text-yellow-400 transition focus:outline-none">&#9733;</button>
-                <button onclick="showFeedbackForm()" class="text-gray-500 hover:text-yellow-400 transition focus:outline-none">&#9733;</button>
-                
-                <!-- Boost: 4 to 5 Stars routes directly to Google Business Profile -->
-                <a href="https://search.google.com/local/writereview?placeid=ChIJp_9SBQD9oI8Rgnn7xZWl5f8" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-yellow-400 transition">&#9733;</a>
-                <a href="https://search.google.com/local/writereview?placeid=ChIJp_9SBQD9oI8Rgnn7xZWl5f8" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-yellow-400 transition">&#9733;</a>
-            </div>
-            <p class="text-xs text-gray-400">Toca las estrellas para calificar</p>
-        </div>
-
-        <!-- Private Feedback Form (Hidden by default) -->
-        <div id="feedback-form" class="hidden glass-panel p-6 rounded-2xl w-full shadow-lg">
-            <h3 class="text-lg font-semibold text-center mb-4">Ayúdanos a mejorar</h3>
-            <!-- NOTE: Replace 'YOUR_FORMSPREE_ID' with your actual Formspree form ID -->
-            <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="flex flex-col space-y-3">
-                <input type="text" name="name" placeholder="Tu Nombre (Opcional)" class="p-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-blue-500">
-                <textarea name="message" rows="3" placeholder="¿En qué podemos mejorar tu experiencia?" required class="p-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-blue-500"></textarea>
-                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition shadow-md">Enviar Comentarios Privados</button>
-                <button type="button" onclick="hideFeedbackForm()" class="text-gray-400 hover:text-white text-sm mt-2 transition">Volver atrás</button>
-            </form>
-        </div>
-
-        <!-- Updated Map Location Card -->
-        <div class="glass-panel p-4 rounded-2xl w-full shadow-lg flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="bg-gray-800 p-3 rounded-full text-blue-500">
-                    <i class="fa-solid fa-map-location-dot"></i>
+        <!-- Action Card / Store Info -->
+        <div class="bg-gray-800 bg-opacity-50 backdrop-blur-md border border-gray-700 p-6 rounded-2xl w-full shadow-xl flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="bg-blue-600 p-3 rounded-full text-white shadow-md">
+                    <i class="fa-solid fa-map-location-dot text-xl"></i>
                 </div>
                 <div class="text-left">
-                    <h4 class="font-semibold text-sm">La Liko Store</h4>
+                    <h4 class="font-bold text-base text-white">La Liko Store</h4>
                     <p class="text-xs text-gray-400">Santa Ana, San José</p>
                 </div>
             </div>
-            <!-- EXACT MAP PIN LINK INTEGRATED HERE -->
-           <a href="https://www.google.com/maps/search/?api=1&query=La+Liko+Store+Santa+Ana&query_place_id=ChIJp_9SBQD9oI8Rgnn7xZWl5f8" target="_blank" rel="noopener noreferrer" class="bg-white text-black text-sm font-bold py-2 px-4 rounded-lg hover:bg-gray-200 transition shadow-md flex items-center">
-    Abrir en Maps <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
-</a>
+            <!-- EXACT COORDINATE NAVIGATION LINK -->
+            <a href="https://www.google.com/maps/dir/?api=1&destination=9.9298584,-84.1806162" target="_blank" rel="noopener noreferrer" class="bg-white text-black text-sm font-bold py-2.5 px-4 rounded-xl hover:bg-gray-200 transition shadow-lg flex items-center">
+                Abrir en Maps <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+            </a>
         </div>
+
     </main>
 
-    <!-- Footer Section -->
-    <footer class="text-center py-6">
+    <!-- Footer -->
+    <footer class="text-center py-6 border-t border-gray-800 mt-8">
         <p class="text-xs text-gray-500">
             Powered and Engineered by <a href="https://auralinkdigital.com" target="_blank" class="font-bold text-yellow-500 hover:text-yellow-400 transition">Auralinkdigital</a>
         </p>
     </footer>
 
-    <!-- Interactive Logic Script -->
-    <script>
-        function showFeedbackForm() {
-            document.getElementById('review-shield').classList.add('hidden');
-            document.getElementById('feedback-form').classList.remove('hidden');
-        }
-
-        function hideFeedbackForm() {
-            document.getElementById('feedback-form').classList.add('hidden');
-            document.getElementById('review-shield').classList.remove('hidden');
-        }
-    </script>
 </body>
 </html>
